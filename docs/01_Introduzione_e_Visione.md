@@ -20,3 +20,34 @@ Il settore della ristorazione affronta sfide complesse, dalla necessità di offr
 ## 1.3 Panoramica della Soluzione Proposta
 
 La web application sarà un sistema integrato composto da diversi moduli interconnessi, accessibili tramite interfacce utente dedicate per ciascun tipo di attore (ristoratore, lavoratore, cliente, amministratore RPL). Sarà basata su un'architettura robusta e scalabile, con un focus sulla sicurezza dei dati e sulla user experience. Le funzionalità principali includeranno la gestione dei profili, il monitoraggio delle performance, la gestione delle leghe e dei trasferimenti, e un sistema di reporting avanzato.
+
+---
+
+## 1.4 Analisi di Settore e Approfondimenti
+
+### 1.4.1 Statistiche e Dati di Settore
+Numeri chiave su ristoranti, lavoratori, fatturato, trend e fonti ufficiali.
+
+### 1.4.2 Tipologie di Ristoranti e Lavoratori
+Classificazioni di locali e profili professionali.
+
+### 1.4.3 Problemi Riscontrati nel Settore
+Sfide comuni: turnover, formazione, digitalizzazione, sostenibilità, ecc.
+
+### 1.4.4 Soluzioni Adottate e Best Practice
+Innovazioni, modelli di successo, esempi virtuosi.
+
+### 1.4.5 Evoluzione del Lavoro nella Ristorazione
+Cambiamenti nel mercato, nuove competenze, impatto della tecnologia.
+
+### 1.4.6 Opportunità e Criticità Attuali
+Analisi SWOT: punti di forza, debolezze, opportunità, minacce.
+
+### 1.4.7 Legislazione e Normative di Riferimento
+Regole su lavoro, sicurezza, qualità, sostenibilità.
+
+### 1.4.8 Associazioni, Studi di Settore e Organismi di Riferimento
+Report, ricerche, enti e associazioni principali.
+
+### 1.4.9 Analisi della Concorrenza
+Competitor, benchmarking, posizionamento.
