@@ -6,11 +6,11 @@ Questa pagina funge da indice centrale per i documenti del progetto. I file sono
 
 - `01_Introduzione_e_Visione.md` - Visione, obiettivi e panoramica della soluzione.
 - `02_Analisi_Settore_Approfondimenti.md` - (archiviato in `docs/_archivio`) Analisi di settore, statistiche e studi di contesto.
-- `03_Piano_di_Fattibilita.md` - Piano di fattibilità e roadmap.
+- `02_Piano_di_Fattibilita.md` - Piano di fattibilità e roadmap.
+- `03_Architettura_Tecnica.md` - Architettura tecnica proposta.
 - `04_Progetto_Pilota_Sardegna.md` - Dettagli progetto pilota Sardegna.
 - `05_Piano_B_RPL_Lite.md` - Variante RPL Lite.
 - `06_Sviluppi_Futuri_e_Moduli_Avanzati.md` - Idee per moduli avanzati.
-- `07_Architettura_Tecnica.md` - Architettura tecnica proposta.
 
 ## Regolamento Generale (cartella `Regolamento_Generale`)
 

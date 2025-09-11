@@ -34,3 +34,10 @@ Questo modulo si occuperà della gestione del sistema di premiazione e riconosci
 *   **Vetrina internazionale:** I ristoranti premiati ricevono enorme riscontro mediatico, attirando sponsor, investitori e turisti.
 *   **Crescita delle best practice:** L'emulazione spinge anche i competitor a migliorare, standardizzando l'eccellenza nel settore.
 *   **Valore aggiunto per il personale:** Un lavoratore che fa parte di un ristorante premiato aumenta il proprio iProfile, salendo di credibilità e opportunità di carriera.
+
+---
+
+Vedi anche:
+
+- `../01_Struttura_Leghe_e_Categorie.md` - collegamento con il sistema leghe
+- `../../02_Analisi_Settore_Approfondimenti.md` (archiviato in `docs/_archivio`) - dati e statistiche di contesto
