@@ -63,7 +63,7 @@ Questo documento presenta il "Piano B" per la Ristorazione Pro League (RPL), una
 ### Fase 4 (a 12 mesi dal lancio): Valutazione e Possibile Upgrade a RPL Completo
 
 *   Chi ha soddisfatto i requisiti minimi in modo costante può decidere di passare al gradino successivo, aderendo al modello RPL completo (Salary Cap, Draft dei Talenti, auditing più avanzato).
-*   In questa fase, si può avviare il reclutamento di sponsor più importanti, grazie alle "storie di successo” che dimostrano l'efficacia del "programma light".
+*   In questa fase, si può avviare il reclutamento di sponsor più importanti, grazie alle "storie di successo" che dimostrano l'efficacia del "programma light".
 
 ## 5. Vantaggi e Criticità del Piano B
 

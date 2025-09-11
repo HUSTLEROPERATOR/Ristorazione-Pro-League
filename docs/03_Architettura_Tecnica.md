@@ -1,4 +1,5 @@
 # Architettura Tecnica della Ristorazione Pro League (RPL) Web App
+
 Questo documento descrive l'architettura di sistema e la piattaforma tecnologica proposta per la web application della Ristorazione Pro League (RPL), fornendo una visione d'insieme dei componenti principali e dello stack tecnologico raccomandato.
 
 ## 5.1 Componenti Principali dell'Architettura

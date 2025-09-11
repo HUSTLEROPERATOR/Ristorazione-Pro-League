@@ -112,4 +112,4 @@ Il modello RPL prevede diverse fonti di entrata per garantire la sua sostenibili
 
 ## Governance e Struttura Legale
 
-...
+... (contenuto consolidato ed esteso)
