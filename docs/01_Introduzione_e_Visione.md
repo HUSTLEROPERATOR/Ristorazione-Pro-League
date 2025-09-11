@@ -51,3 +51,12 @@ Report, ricerche, enti e associazioni principali.
 
 ### 1.4.9 Analisi della Concorrenza
 Competitor, benchmarking, posizionamento.
+
+---
+
+### Documenti correlati
+
+Per approfondimenti e analisi di settore, vedi:
+
+- `docs/_archivio/02_Analisi_Settore_Approfondimenti.md` (Analisi dettagliata, statistiche e studi di settore)
+- `docs/Regolamento_Generale/04_Premi_e_Riconoscimenti.md` (Sistema di premi e riconoscimenti)
