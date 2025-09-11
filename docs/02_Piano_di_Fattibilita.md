@@ -1,4 +1,3 @@
-```markdown
 # Piano di Fattibilità della Ristorazione Pro League (RPL)
 
 Questo documento presenta il piano di fattibilità per la Ristorazione Pro League (RPL), delineando le fasi di implementazione, i rischi e le strategie di mitigazione, il modello di business e la struttura di governance. L'obiettivo è fornire una visione chiara e dettagliata per l'avvio, lo sviluppo e la sostenibilità del progetto.
@@ -114,5 +113,3 @@ Il modello RPL prevede diverse fonti di entrata per garantire la sua sostenibili
 ## Governance e Struttura Legale
 
 ...
-
-``` 

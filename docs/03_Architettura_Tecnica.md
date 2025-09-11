@@ -1,6 +1,4 @@
-````markdown
 # Architettura Tecnica della Ristorazione Pro League (RPL) Web App
-
 Questo documento descrive l'architettura di sistema e la piattaforma tecnologica proposta per la web application della Ristorazione Pro League (RPL), fornendo una visione d'insieme dei componenti principali e dello stack tecnologico raccomandato.
 
 ## 5.1 Componenti Principali dell'Architettura
@@ -15,7 +13,7 @@ La web application RPL sarà basata su un'architettura a microservizi o a serviz
 
 ## 5.2 Proposta di Stack Tecnologico
 
-Per garantire robustezza, scalibilità e un'ampia disponibilità di risorse e competenze, si propone il seguente stack tecnologico:
+Per garantire robustezza, scalabilità e un'ampia disponibilità di risorse e competenze, si propone il seguente stack tecnologico:
 
 *   **Frontend:**
     *   **Framework:** React (con TypeScript per maggiore robustezza e manutenibilità).
@@ -42,8 +40,4 @@ graph TD
     D -->|Memorizza dati per| C
 ```
 
-**Descrizione del Diagramma:**
-
 Il diagramma sopra illustra l'architettura di alto livello della web application. Gli **Utenti** interagiscono con il **Frontend** (l'applicazione web basata su React). Il Frontend comunica con il **Backend** (sviluppato in Node.js o Python) tramite API. Il Backend è responsabile della logica di business e interagisce con il **Database** per la persistenza dei dati. Inoltre, il Backend si integra con vari **Servizi Esterni** per funzionalità specifiche come pagamenti, notifiche o moduli avanzati di Intelligenza Artificiale/Machine Learning.
-
-````
