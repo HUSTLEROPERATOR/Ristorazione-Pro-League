@@ -1,60 +1,55 @@
-# Codice di Condotta della Ristorazione Pro League (RPL)
+# Codice di Condotta
 
-Ci impegniamo a creare un ambiente accogliente e rispettoso per tutti i partecipanti alla Ristorazione Pro League (RPL), indipendentemente da età, corporatura, disabilità visibili o invisibili, etnia, caratteristiche sessuali, identità ed espressione di genere, livello di esperienza, istruzione, stato socio-economico, nazionalità, aspetto personale, razza, religione o identità e orientamento sessuale.
+## Nostro Impegno
 
-Questo codice di condotta delinea le nostre aspettative per il comportamento di tutti coloro che partecipano alla nostra community, così come le conseguenze per i comportamenti inaccettabili.
+La comunità di Ristorazione Pro League si impegna a mantenere un ambiente accogliente e rispettoso per tutti, indipendentemente dall'età, dimensione del corpo, disabilita, etnia, caratteristiche sessuali, identità e espressione di genere, livello di esperienza, istruzione, status socioeconomico, nazionalità, aspetto personale, razza, religione, o identità e orientamento sessuale.
 
----
+I nostri standard di comportamento si applicano a:
 
-## 1. Il Nostro Impegno
+*   Spazi del progetto (issues, pull requests, wiki)
+*   Spazi pubblici (Discussions, social media)
+*   Eventi organizzati dal progetto (online o offline)
 
-Ci impegniamo a rendere la partecipazione alla nostra community un'esperienza priva di molestie per tutti, indipendentemente da età, corporatura, disabilità visibili o invisibili, etnia, caratteristiche sessuali, identità ed espressione di genere, livello di esperienza, istruzione, stato socio-economico, nazionalità, aspetto personale, razza, religione o identità e orientamento sessuale.
+## Comportamento Accettabile
 
-Ci impegniamo a comportarci e interagire in modi che contribuiscano a un ambiente aperto, accogliente, diversificato, inclusivo e sano.
+Comportamenti che contribuiscono a un ambiente positivo:
 
-## 2. Comportamenti Accettabili
+*   Mostrare rispetto e cortesia verso altre persone
+*   Accettare costruttive critiche
+*   Concentrarsi su ciò che è meglio per la comunità
+*   Rendere esperienze positive per altre persone
 
-I comportamenti che contribuiscono a creare un ambiente positivo includono:
+## Comportamento Inaccettabile
 
-*   **Essere rispettosi:** Trattare tutti con rispetto e dignità.
-*   **Essere inclusivi:** Accogliere persone di ogni provenienza e prospettiva.
-*   **Essere premurosi:** Considerare l'impatto delle proprie parole e azioni sugli altri.
-*   **Essere aperti:** Accettare idee diverse e critiche costruttive.
-*   **Essere empatici:** Comprendere e condividere i sentimenti degli altri.
-*   **Essere precisi e chiari:** Comunicare in modo chiaro e conciso, evitando ambiguità.
-*   **Essere collaborativi:** Lavorare insieme per raggiungere obiettivi comuni.
-*   **Essere pazienti:** Comprendere che non tutti hanno lo stesso livello di conoscenza o esperienza.
+Comportamenti che possono considerarsi inappropriati o inaccettabili:
 
-## 3. Comportamenti Inaccettabili
+*   L'uso di linguaggio o immagini sessualmente suggestive o discriminatorie
+*   Commenti personali attacchi o insulti
+*   Harassment o stalking online
+*   Pubblicazione privata di altre persone (es. indirizzi email, numeri di telefono)
+*   Altri comportamenti ragionevolmente considerati inappropriati in un professionale contesto
 
-I comportamenti inaccettabili includono:
+## Responsabilità del Progetto
 
-*   **Linguaggio o immagini sessualizzate:** Commenti, battute o immagini di natura sessuale.
-*   **Attacchi personali:** Commenti offensivi, denigratori o dispregiativi.
-*   **Trolling o flame:** Provocazioni intenzionali, insulti o commenti aggressivi.
-*   **Molestie:** Comportamenti intimidatori, minacciosi o vessatori.
-*   **Discriminazione:** Commenti o azioni basati su caratteristiche personali (razza, genere, religione, ecc.).
-*   **Spamming:** Invio ripetuto di messaggi non pertinenti o promozionali.
-*   **Impersonificazione:** Fingere di essere un'altra persona.
-*   **Divulgazione di informazioni private:** Condivisione di dati personali di altri senza consenso.
-*   **Qualsiasi altra condotta che possa essere ragionevolmente considerata inappropriata in un contesto professionale.**
+I maintainer e responsabili del progetto hanno il diritto e la responsabilità di:
 
-## 4. Conseguenze dei Comportamenti Inaccettabili
+*   Rimuovere, modificare o rifiutare commenti, commit, code, wiki edits, issues e altre contribuzioni che non sono allineati con questo codice di condotta
+*   Notificare a partecipanti di eventuali comportamenti inaccettabili
+*   Prende azioni appropriate e ragionevoli in risposta a comportamenti inaccettabili
 
-I partecipanti a cui viene chiesto di interrompere un comportamento inaccettabile devono conformarsi immediatamente.
+## Ambito
 
-Se un partecipante si impegna in un comportamento inaccettabile, gli organizzatori del progetto possono intraprendere qualsiasi azione che ritengano appropriata, inclusa l'espulsione temporanea o permanente dalla community senza preavviso.
+Questo codice di condotta si applica a tutti gli spazi del progetto e alle attività organizzate dal progetto. Si applica anche quando una persona rappresenta il progetto o la sua comunità in occasioni pubbliche. Esempi di rappresentanza del progetto includono l'uso di un indirizzo email ufficiale, la pubblicazione tramite un account ufficiale sui social media, o agendo come rappresentante designato in un evento online o offline.
 
-## 5. Segnalazione
+## Applicazione
 
-Se si verifica un comportamento inaccettabile o si hanno altre preoccupazioni, si prega di segnalarlo al team di coordinamento del progetto tramite [specificare un indirizzo email o un canale di segnalazione, es. un indirizzo email dedicato o un sistema di segnalazione su GitHub Issues].
+Le violazioni di questo codice di condotta possono essere segnalate contattando il team di progetto all'indirizzo: [inserire contatto email]. Tutte le segnalazioni verranno revisionate e investigate in modo tempestivo e appropriato.
 
-Tutte le segnalazioni saranno esaminate e indagate in modo tempestivo e confidenziale.
+Tutti i membri della comunità sono incoraggiati a segnalare comportamenti che violano questo codice di condotta. Le segnalazioni verranno trattate con la massima confidenzialità.
 
-## 6. Ambito di Applicazione
+## Attribution
 
-Questo codice di condotta si applica a tutti gli spazi della community della Ristorazione Pro League, sia online che offline, e a tutti gli individui che rappresentano la community.
+Questo Codice di Condotta è adattato dal [Contributor Covenant][homepage], versione 1.4, disponibile su [https://www.contributor-covenant.org/version/1/4/code-of-conduct.html][version]
 
----
-
-Grazie per aver contribuito a creare un ambiente positivo e accogliente per la nostra community!
+[homepage]: https://www.contributor-covenant.org
+[version]: https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
