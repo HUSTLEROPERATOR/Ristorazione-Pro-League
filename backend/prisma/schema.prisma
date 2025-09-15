@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  role      String   @default("USER")
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  restaurants Restaurant[]
+  workerProfiles WorkerProfile[]
+
+  @@map("users")
+}
+
+model Restaurant {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  address     String
+  city        String
+  region      String
+  postalCode  String
+  phone       String?
+  email       String?
+  website     String?
+  cuisine     String
+  priceRange  String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  owner   User   @relation(fields: [ownerId], references: [id])
+  ownerId String
+
+  workers WorkerProfile[]
+  jobOffers JobOffer[]
+
+  @@map("restaurants")
+}
+
+model WorkerProfile {
+  id          String   @id @default(cuid())
+  experience  Int      // anni di esperienza
+  skills      String
+  languages   String
+  availability String // giorni della settimana
+  hourlyRate  Decimal?
+  bio         String?
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
+
+  currentRestaurant   Restaurant? @relation(fields: [currentRestaurantId], references: [id])
+  currentRestaurantId String?
+
+  applications JobApplication[]
+
+  @@map("worker_profiles")
+}
+
+model JobOffer {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  position    String
+  requirements String
+  salary      Decimal?
+  workingHours String
+  contractType String
+  startDate   DateTime?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId String
+
+  applications JobApplication[]
+
+  @@map("job_offers")
+}
+
+model JobApplication {
+  id        String            @id @default(cuid())
+  message   String?
+  status    String           @default("PENDING")
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  // Relations
+  worker   WorkerProfile @relation(fields: [workerId], references: [id])
+  workerId String
+
+  jobOffer   JobOffer @relation(fields: [jobOfferId], references: [id])
+  jobOfferId String
+
+  @@unique([workerId, jobOfferId])
+  @@map("job_applications")
+}
+

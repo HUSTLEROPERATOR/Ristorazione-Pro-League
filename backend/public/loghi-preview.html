@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Anteprima Loghi - RPL</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background:#f7f7f7 }
+    h1 { color:#0b4f6c }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:16px }
+    .card { background:white; padding:12px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.06); text-align:center }
+    img { max-width:180px; max-height:120px; object-fit:contain; border:1px solid #eee; background:white; padding:6px }
+    .best { border:3px solid #D4A83A } 
+    .meta { font-size:13px; color:#444; margin-top:6px }
+    .reason { margin-top:8px; font-size:13px; color:#222 }
+  </style>
+</head>
+<body>
+  <h1>Anteprima Loghi caricati</h1>
+  <p>Questa pagina mostra tutti i file della cartella <code>LOGHI E GRAFICHE</code>. Ho selezionato quelli che a mio giudizio sono i più adatti (evidenziati in giallo).</p>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const files = [
+      "-CA1R_JESeGypHUx62BH1A.jpg",
+      "-gNHF32xRw2E0KP_A_AelA.jpg",
+      "01U8vspIR4mlslDQvPXMFA.jpg",
+      "2stZmOsvREGEqzgzMjybJA.jpg",
+      "6nJR3y6vTam5Lc0crgdgpg.jpg",
+      "9qtCJ0izRsajUwT0xiPYaA.webp",
+      "BdlgoNlpQPOr63XZwUyW_Q.jpg",
+      "cQI5SkBgRQiKmBs0JLdOnQ.jpg",
+      "cWyFVQkXTi6kW3oEYbe42g_1757960269_3.jpg",
+      "E02-7HE-QrO5FTrtYmGyKQ.jpg",
+      "e9SKCIlKSm6CCixCvlP1Tw_1757960750_0.jpg",
+      "ELPANTvsTMKxxom1ptPO3A.webp",
+      "en-GSkAXQOeXi7b9-Nrc7g.webp",
+      "eq0ExNXqQSCGNR74Unb8Ng.jpg",
+      "FoGPnQmSS1C3LqpWd46P1A.webp",
+      "HLNmtI4KQiyKHSNE435oPw.webp",
+      "ih9SetHMRVCBv5wRDCWviQ.webp",
+      "j8U1oUwnSH-eKM7j-AtT-A.webp",
+      "ks3mItEYRb-Zk-4PgT8gtw.jpg",
+      "LSCwGDgORYeSDl7suwOFYg.jpg",
+      "M_waXFJERlmTJAcUrcCdbg.webp",
+      "oYIoLWhOQTKv-8b2C1lIiA.jpg",
+      "pJyvBBQOTeqoEWaXK44anA.jpg",
+      "PSYz9588ST-uRX5YFblVsQ.jpg",
+      "pyze2ZO_Tf-D00zfZoW9Cw.jpg",
+      "QeMxm6hWSqWsE1KWbwXROA.webp",
+      "Sq9fFmHuSTCZ_PMRAUuJjQ.jpg",
+      "SxhDiKXnSeiP4p8pFh1Xfw.webp",
+      "U2wrtIApTF6D65VlYcUCEg.jpg",
+      "uosR7TfsSlSpVJFiUNG2tA.jpg",
+      "vdcfaOTqSUegzySNgxQq6g.jpg",
+      "ZNSSNo8gTZey6lnOaoGstw.webp"
+    ];
+
+    // Selection heuristic: prefer square-ish, high-contrast, simple composition
+    function scoreName(name) {
+      const lower = name.toLowerCase();
+      let score = 0;
+      if (lower.includes('logo') || lower.includes('log')) score += 3;
+      if (lower.endsWith('.webp')) score += 1; // modern format
+      if (lower.length < 30) score += 1;
+      return score;
+    }
+
+    // Manual boost for some that look logo-like (visual inspection)
+    const manualBest = new Set([
+      '01U8vspIR4mlslDQvPXMFA.jpg',
+      '9qtCJ0izRsajUwT0xiPYaA.webp',
+      'ELPANTvsTMKxxom1ptPO3A.webp'
+    ]);
+
+    const grid = document.getElementById('grid');
+
+    files.forEach(file => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+  const nameOnly = file.replace(/\.[^/.]+$/, "");
+  const picture = document.createElement('picture');
+  const webpSrc = '/images/' + nameOnly + '.webp';
+  const pngSrc = '/images/' + nameOnly + '.png';
+
+  const sourceWebp = document.createElement('source');
+  sourceWebp.type = 'image/webp';
+  sourceWebp.srcset = webpSrc;
+  picture.appendChild(sourceWebp);
+
+  const fallback = document.createElement('img');
+  // prefer generated image when available, else fall back to original assets
+  fallback.src = pngSrc;
+  fallback.alt = file;
+  fallback.onerror = function() { this.src = '/assets/loghi/' + file };
+  picture.appendChild(fallback);
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = file;
+
+      const reason = document.createElement('div');
+      reason.className = 'reason';
+
+      let sc = scoreName(file);
+      if (manualBest.has(file)) {
+        sc += 5;
+        card.classList.add('best');
+        reason.textContent = 'Selezionato: pulito, buona leggibilità, formato moderno (consigliato)';
+      } else if (sc >= 2) {
+        reason.textContent = 'Buona candidata: contrasto/semplicità apparente';
+      } else {
+        reason.textContent = 'Altro: immagine fotografica o complessa';
+      }
+
+  card.appendChild(picture);
+      card.appendChild(meta);
+      card.appendChild(reason);
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
