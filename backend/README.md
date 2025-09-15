@@ -1,3 +1,90 @@
+# Ristorazione Pro League (RPL)
+
+## Project Overview
+Ristorazione Pro League (RPL) is a backend application designed to manage restaurant data and user authentication. It provides a robust API for CRUD operations, user management, and more.
+
+## Features
+- User authentication with JWT.
+- CRUD operations for users and restaurants.
+- Zod validation for request payloads.
+- SQLite database with Prisma ORM.
+- Seed script for populating the database with sample data.
+- API smoke-test script for endpoint validation.
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+- SQLite (for development)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/HUSTLEROPERATOR/Ristorazione-Pro-League.git
+   ```
+2. Navigate to the backend directory:
+   ```bash
+   cd Ristorazione-Pro-League/backend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Environment Variables
+Create a `.env` file in the `backend` directory and configure the following variables:
+```
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="your_jwt_secret"
+```
+
+### Database Setup
+1. Generate the Prisma client:
+   ```bash
+   npx prisma generate
+   ```
+2. Push the Prisma schema to the database:
+   ```bash
+   npx prisma db push
+   ```
+3. Seed the database with sample data:
+   ```bash
+   npm run db:seed
+   ```
+
+### Running the Server
+Start the development server:
+```bash
+npx tsx src/simple-server.ts
+```
+The server will run at `http://localhost:4000`.
+
+### Testing the API
+Run the API smoke-test script:
+```bash
+npx tsx src/scripts/test-api.ts
+```
+
+## Usage Examples
+
+### Authentication
+- **Login**: Send a POST request to `/auth/login` with `email` and `password`.
+- **Register**: Send a POST request to `/auth/register` with user details.
+
+### CRUD Operations
+- **Users**: Use `/users` endpoints for creating, reading, updating, and deleting users.
+- **Restaurants**: Use `/restaurants` endpoints for managing restaurant data.
+
+## Contribution Guidelines
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes with clear messages.
+4. Submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
 # RPL Backend
 
 Questo è il backend per il progetto Ristorazione Pro League (RPL), un'API RESTful costruita con Node.js, TypeScript, Express e Prisma.
