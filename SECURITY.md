@@ -1,7 +1,7 @@
 # Sicurezza
 
 ## Segnalazione Vulnerabilità
-Invia una mail privata a: (inserire contatto)  
+Invia una mail privata a: hustlerofficialhub@gmail.com
 Non aprire issue pubbliche per vulnerabilità non divulgate.
 
 ## Linee Guida
