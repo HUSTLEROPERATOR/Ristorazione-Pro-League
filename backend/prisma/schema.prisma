@@ -85,6 +85,7 @@ model JobOffer {
   salary      Decimal?
   workingHours String
   contractType String
+  contractLevel String?  // Livello CCNL applicato (es. "3°", "4°")
   startDate   DateTime?
   isActive    Boolean   @default(true)
   createdAt   DateTime  @default(now())
@@ -93,6 +94,9 @@ model JobOffer {
   // Relations
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
   restaurantId String
+
+  ccnlVariant   CCNLVariant? @relation(fields: [ccnlVariantId], references: [id])
+  ccnlVariantId String?
 
   applications JobApplication[]
 
@@ -115,5 +119,84 @@ model JobApplication {
 
   @@unique([workerId, jobOfferId])
   @@map("job_applications")
+}
+
+model CCNL {
+  id          String   @id @default(cuid())
+  name        String   @unique // es. "Turismo", "Pubblici Esercizi", "Ristorazione Collettiva"
+  description String?
+  sector      String   // Settore di riferimento
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  levels   CCNLLevel[]
+  variants CCNLVariant[]
+
+  @@map("ccnl")
+}
+
+model CCNLLevel {
+  id          String   @id @default(cuid())
+  level       String   // es. "1°", "2°", "3°", "4°", "5°", "6°", "7°", "Quadro"
+  description String   // Descrizione del livello e mansioni
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  ccnl   CCNL   @relation(fields: [ccnlId], references: [id])
+  ccnlId String
+
+  variantLevels CCNLVariantLevel[]
+
+  @@unique([ccnlId, level])
+  @@map("ccnl_levels")
+}
+
+model CCNLVariant {
+  id             String   @id @default(cuid())
+  year           Int      // Anno di riferimento es. 2025, 2026
+  name           String   // es. "CCNL Turismo 2025", "CCNL Turismo 2026"
+  validFrom      DateTime // Data inizio validità
+  validTo        DateTime? // Data fine validità
+  description    String?  // Note e modifiche rispetto alla versione precedente
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  ccnl   CCNL   @relation(fields: [ccnlId], references: [id])
+  ccnlId String
+
+  variantLevels CCNLVariantLevel[]
+  jobOffers     JobOffer[]
+
+  @@unique([ccnlId, year])
+  @@map("ccnl_variants")
+}
+
+model CCNLVariantLevel {
+  id                String   @id @default(cuid())
+  minimumSalary     Decimal  // Retribuzione minima mensile lorda
+  hourlyRate        Decimal? // Paga oraria (se applicabile)
+  overtimeRate      Decimal? // Maggiorazione straordinario
+  holidayRate       Decimal? // Maggiorazione festivi
+  nightShiftRate    Decimal? // Maggiorazione notturno
+  mealAllowance     Decimal? // Indennità pasto
+  accommodationInfo String?  // Info su eventuale alloggio
+  otherBenefits     String?  // Altri benefit (es. assicurazioni, welfare)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  variant   CCNLVariant @relation(fields: [variantId], references: [id])
+  variantId String
+
+  level   CCNLLevel @relation(fields: [levelId], references: [id])
+  levelId String
+
+  @@unique([variantId, levelId])
+  @@map("ccnl_variant_levels")
 }
 

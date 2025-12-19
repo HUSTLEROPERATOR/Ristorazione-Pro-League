@@ -12,6 +12,7 @@ import authRoutes from './routes/auth';
 import userRoutes from './routes/users';
 import restaurantRoutes from './routes/restaurants';
 import workerRoutes from './routes/workers';
+import ccnlRoutes from './routes/ccnl';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler';
@@ -122,6 +123,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/workers', workerRoutes);
+app.use('/api/ccnl', ccnlRoutes);
 
 // Catch-all for API routes
 app.all('/api/*', notFound);
