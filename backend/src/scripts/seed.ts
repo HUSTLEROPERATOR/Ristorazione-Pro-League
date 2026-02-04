@@ -126,7 +126,7 @@ async function main() {
     },
   });
 
-  void await prisma.restaurant.create({
+  await prisma.restaurant.create({
     data: {
       name: 'Bistrot La Piazza',
       description: 'Un locale emergente nel cuore di Firenze, in percorso di crescita RPL.',
@@ -142,7 +142,7 @@ async function main() {
     },
   });
 
-  void await prisma.restaurant.create({
+  await prisma.restaurant.create({
     data: {
       name: 'Osteria del Borgo',
       description: 'Sapori autentici in un ambiente che valorizza il personale.',
@@ -238,7 +238,7 @@ async function main() {
   console.log('👨‍🍳 Created worker users');
 
   // Create worker profiles
-  void await prisma.workerProfile.create({
+  await prisma.workerProfile.create({
     data: {
       userId: worker1.id,
       experience: 5,
@@ -252,7 +252,7 @@ async function main() {
     },
   });
 
-  void await prisma.workerProfile.create({
+  await prisma.workerProfile.create({
     data: {
       userId: worker2.id,
       experience: 3,
@@ -266,7 +266,7 @@ async function main() {
     },
   });
 
-  void await prisma.workerProfile.create({
+  await prisma.workerProfile.create({
     data: {
       userId: worker3.id,
       experience: 8,
@@ -296,7 +296,7 @@ async function main() {
   console.log('📋 Created worker profiles');
 
   // Create job offers
-  void await prisma.jobOffer.create({
+  await prisma.jobOffer.create({
     data: {
       restaurantId: gourmetFuturo.id,
       title: 'Sous Chef',
@@ -311,7 +311,7 @@ async function main() {
     },
   });
 
-  void await prisma.jobOffer.create({
+  await prisma.jobOffer.create({
     data: {
       restaurantId: seaStars.id,
       title: 'Pizzaiolo',
@@ -343,7 +343,7 @@ async function main() {
   console.log('💼 Created job offers');
 
   // Create job applications
-  void await prisma.jobApplication.create({
+  await prisma.jobApplication.create({
     data: {
       workerId: profile4.id,
       jobOfferId: job3.id,
