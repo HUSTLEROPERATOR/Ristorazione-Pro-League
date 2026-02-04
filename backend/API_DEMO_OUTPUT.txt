@@ -1,0 +1,61 @@
+╔════════════════════════════════════════════════════════════════╗
+║         RPL BACKEND API - MOCK DATA DEMONSTRATION              ║
+╚════════════════════════════════════════════════════════════════╝
+
+🏥 Health Check
+───────────────────────────────────────────────────────────────
+{
+  "status": "OK",
+  "message": "RPL Backend API is running",
+  "timestamp": "2026-02-04T13:43:13.628Z",
+  "version": "1.0.0"
+}
+
+🍽️  Restaurants (6 total)
+───────────────────────────────────────────────────────────────
+• Nuova Radice (Torino) - Vegana | BUDGET
+• Sea & Stars (Napoli) - Pesce | HIGH_END
+• Osteria del Borgo (Bologna) - Emiliana | MID_RANGE
+• Bistrot La Piazza (Firenze) - Toscana | MID_RANGE
+• Gourmet Futuro (Milano) - Innovativa | HIGH_END
+• Trattoria del Ponte (Roma) - Tradizionale | MID_RANGE
+
+👨‍🍳 Worker Profiles (4 total)
+───────────────────────────────────────────────────────────────
+• Giulia Gialli - 1 years exp | ✅ Available
+• Luca Neri - 8 years exp | 🏢 Employed at Trattoria del Ponte
+• Anna Verdi - 3 years exp | 🏢 Employed at Trattoria del Ponte
+• Mario Rossi - 5 years exp | 🏢 Employed at Trattoria del Ponte
+
+💼 Job Offers (3 total)
+───────────────────────────────────────────────────────────────
+• Cuoco Vegano at Nuova Radice (Torino)
+  Position: Chef | Salary: €1600/month
+  Contract: Tempo determinato | Hours: 35 ore settimanali
+• Pizzaiolo at Sea & Stars (Napoli)
+  Position: Pizzaiolo | Salary: €1800/month
+  Contract: Tempo determinato | Hours: 36 ore settimanali
+• Sous Chef at Gourmet Futuro (Milano)
+  Position: Sous Chef | Salary: €2500/month
+  Contract: Tempo indeterminato | Hours: 40 ore settimanali
+
+📊 Detailed Restaurant Example: Trattoria del Ponte
+───────────────────────────────────────────────────────────────
+{
+  "name": "Trattoria del Ponte",
+  "location": "Roma, Lazio",
+  "cuisine": "Tradizionale",
+  "owner": "Giovanni Ponte",
+  "phone": "+39 06 1234567",
+  "email": "info@trattoriaponte.it",
+  "workers": [
+    "Mario Rossi",
+    "Anna Verdi",
+    "Luca Neri"
+  ]
+}
+
+╔════════════════════════════════════════════════════════════════╗
+║  ✅ All API endpoints are functional with mock data!           ║
+║  📚 See MOCK_DATA_GUIDE.md for detailed documentation         ║
+╚════════════════════════════════════════════════════════════════╝
