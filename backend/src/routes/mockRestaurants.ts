@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
         phone: req.body.phone,
         email: req.body.email,
         website: req.body.website,
-        cuisine: cuisine ?? [],
+        cuisine: Array.isArray(cuisine) ? cuisine.join(', ') : (cuisine ?? 'Italiana'),
         priceRange: (priceRange ?? 'MID_RANGE') as any,
         ownerId: owner.id,
       },
