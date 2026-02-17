@@ -45,7 +45,7 @@ Guida completa per sviluppatori che contribuiscono al progetto Ristorazione Pro 
    ```env
    NODE_ENV=development
    PORT=3000
-   DATABASE_URL="file:./dev.db"
+   DATABASE_URL="file:./prisma/dev.db"
    JWT_SECRET=your-secret-key-here
    ```
 
