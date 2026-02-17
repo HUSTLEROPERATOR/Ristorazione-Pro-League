@@ -1,30 +1,16 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { RestaurantController } from '../controllers/restaurantController';
+import { authenticateToken, optionalAuth } from '../middleware/auth';
 
 const router = Router();
 
-// Restaurant routes placeholders
-router.get('/', (_req: Request, res: Response) => {
-  res.status(501).json({
-    success: false,
-    message: 'List restaurants non ancora implementato',
-    endpoint: 'GET /api/restaurants'
-  });
-});
+// Public routes
+router.get('/', optionalAuth, RestaurantController.list);
+router.get('/:id', optionalAuth, RestaurantController.getById);
 
-router.post('/', (_req: Request, res: Response) => {
-  res.status(501).json({
-    success: false,
-    message: 'Create restaurant non ancora implementato',
-    endpoint: 'POST /api/restaurants'
-  });
-});
-
-router.get('/:id', (_req: Request, res: Response) => {
-  res.status(501).json({
-    success: false,
-    message: 'Get restaurant by ID non ancora implementato',
-    endpoint: 'GET /api/restaurants/:id'
-  });
-});
+// Protected routes
+router.post('/', authenticateToken, RestaurantController.create);
+router.put('/:id', authenticateToken, RestaurantController.update);
+router.delete('/:id', authenticateToken, RestaurantController.delete);
 
 export default router;

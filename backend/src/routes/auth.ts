@@ -1,37 +1,27 @@
 import { Router } from 'express';
-// import { AuthController } from '../controllers/authController';
+import { AuthController } from '../controllers/authController';
 import { SimpleAuthController } from '../controllers/simpleAuthController';
-// import { authenticateToken } from '../middleware/auth';
+import { authenticateToken } from '../middleware/auth';
 
 const router = Router();
 
-// Public routes (using simple controller for testing)
-router.post('/register', SimpleAuthController.register);
-router.post('/login', SimpleAuthController.login);
+// Use full AuthController for production, SimpleAuthController for testing
+const USE_SIMPLE_AUTH = process.env['USE_SIMPLE_AUTH'] === 'true';
 
-// Placeholder routes
-router.post('/refresh', (_req, res) => {
-  res.status(501).json({
-    success: false,
-    message: 'Refresh token non ancora implementato',
-    endpoint: 'POST /api/auth/refresh'
-  });
-});
+// Public routes
+if (USE_SIMPLE_AUTH) {
+  router.post('/register', SimpleAuthController.register);
+  router.post('/login', SimpleAuthController.login);
+} else {
+  router.post('/register', AuthController.register);
+  router.post('/login', AuthController.login);
+}
 
-router.post('/logout', (_req, res) => {
-  res.status(501).json({
-    success: false,
-    message: 'Logout non ancora implementato',  
-    endpoint: 'POST /api/auth/logout'
-  });
-});
+// Token management
+router.post('/refresh', AuthController.refreshToken);
+router.post('/logout', AuthController.logout);
 
-router.get('/profile', (_req, res) => {
-  res.status(501).json({
-    success: false,
-    message: 'Profile non ancora implementato',
-    endpoint: 'GET /api/auth/profile'
-  });
-});
+// Protected routes
+router.get('/profile', authenticateToken, AuthController.getProfile);
 
 export default router;

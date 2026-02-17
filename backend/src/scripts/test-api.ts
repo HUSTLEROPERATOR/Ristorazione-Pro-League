@@ -1,5 +1,4 @@
-import fetch from 'node-fetch';
-
+// Node.js 18+ has native fetch, no import needed
 const BASE = process.env['BASE_URL'] || 'http://localhost:4000';
 
 async function run() {
