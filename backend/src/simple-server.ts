@@ -3,84 +3,114 @@ import path from 'path';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
-// Use explicit host/port and default to 0.0.0.0 so local tools can connect reliably
 const PORT = parseInt(process.env['PORT'] || '4000', 10);
 const HOST = process.env['HOST'] || '0.0.0.0';
 
-// Basic middleware
-app.use(cors());
+// ---------- Middleware ----------
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, '../public')));
-// Serve uploaded logos and graphics from project root
-app.use('/assets/loghi', express.static(path.join(__dirname, '../../LOGHI E GRAFICHE')));
-// Serve favicons folder if present
-app.use('/favicons', express.static(path.join(__dirname, '../public/favicons')));
+// Serve static files from backend/public (API status page, favicons, etc.)
+// Use process.cwd() to be compatible with both CJS and ESM execution
+const publicDir = path.join(process.cwd(), 'public');
+app.use(express.static(publicDir));
 
 // Simple request logger
 app.use((req, _res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.originalUrl}`);
+  console.log(`${new Date().toISOString()} [${req.method}] ${req.originalUrl}`);
   next();
 });
 
-// --- API routes (mock, in-memory) ---
-import usersRouter from './routes/mockUsers';
-import restaurantsRouter from './routes/mockRestaurants';
-app.use('/api/users', usersRouter);
+// ---------- API Routes (in-memory, no DB required) ----------
+import authRouter        from './routes/authInMemory';
+import usersRouter       from './routes/inMemoryUsers';
+import restaurantsRouter from './routes/inMemoryRestaurants';
+
+app.use('/api/auth',        authRouter);
+app.use('/api/users',       usersRouter);
 app.use('/api/restaurants', restaurantsRouter);
 
-// Root route
-app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-// Health check endpoint
+// ---------- Health / Info Endpoints ----------
 app.get('/health', (_req, res) => {
   res.status(200).json({
     status: 'OK',
     message: 'RPL Backend API is running',
     timestamp: new Date().toISOString(),
-    version: '1.0.0'
+    version: '1.0.0',
+    mode: 'in-memory',
   });
 });
 
-// Test endpoint
-app.get('/test-all', async (_req, res) => {
+app.get('/test-all', (_req, res) => {
   res.status(200).json({
     success: true,
-    message: 'RPL Backend Test - Server is running!',
+    message: 'RPL Backend Test – Server is running!',
     timestamp: new Date().toISOString(),
     endpoints: [
-      'GET /health',
-      'GET /test-all',
-      'GET /',
-    ]
+      'GET  /health',
+      'GET  /test-all',
+      'POST /api/auth/login',
+      'POST /api/auth/register',
+      'POST /api/auth/logout',
+      'GET  /api/auth/profile',
+      'GET  /api/restaurants',
+      'GET  /api/restaurants/:id',
+      'POST /api/restaurants',
+      'GET  /api/users',
+      'GET  /api/users/:id',
+      'POST /api/users',
+    ],
+    demoCredentials: {
+      ristoratore: { email: 'ristoratore@rpl.example', password: 'rpl2025' },
+      lavoratore:  { email: 'mario.rossi@rpl.example', password: 'rpl2025' },
+    },
   });
 });
 
-// Catch all other routes
-app.get('*', (_req, res) => {
-  res.status(404).json({
-    error: 'Route not found',
-    message: 'This endpoint does not exist'
-  });
+// Root route – API info
+app.get('/', (_req, res) => {
+  const hasPublicIndex = (() => {
+    try {
+      require('fs').accessSync(path.join(process.cwd(), 'public/index.html'));
+      return true;
+    } catch { return false; }
+  })();
+
+  if (hasPublicIndex) {
+    res.sendFile(path.join(process.cwd(), 'public/index.html'));
+  } else {
+    res.json({
+      name: 'RPL Backend API',
+      version: '1.0.0',
+      status: 'running',
+      docs: '/test-all',
+    });
+  }
 });
 
-// Start server
+// 404 handler
+app.use((_req, res) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
+// ---------- Start ----------
 const server = app.listen(PORT, HOST, () => {
-  console.log(`🚀 RPL Backend server running on ${HOST}:${PORT}`);
-  console.log(`📊 Health check: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}/health`);
+  console.log(`🚀 RPL Backend (in-memory) running on http://localhost:${PORT}`);
+  console.log(`📊 Health: http://localhost:${PORT}/health`);
+  console.log(`📖 API docs: http://localhost:${PORT}/test-all`);
   console.log(`🌍 Environment: ${process.env['NODE_ENV'] || 'development'}`);
 });
 
-server.on('error', (err: any) => {
-  console.error('Server error:', err && err.message ? err.message : err);
+server.on('error', (err: NodeJS.ErrnoException) => {
+  console.error('Server error:', err.message);
   process.exit(1);
 });
 
