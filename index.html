@@ -1,313 +1,967 @@
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piattaforma Ristorazione Pro League (RPL)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorazione Pro League (RPL) – Piattaforma</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@0.372.0/dist/umd/lucide.min.js"></script>
-
-    <!-- App styles -->
-    <link rel="stylesheet" href="styles/style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <!-- App styles -->
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-700"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M12 18v-6"></path><path d="M9 15h6"></path></svg>
-                <span class="text-2xl font-bold text-slate-800">RPL</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#cerca-ristoranti" class="text-slate-600 hover:text-teal-700 font-medium">Trova Ristoranti</a>
-                <a href="#catene-food" class="text-slate-600 hover:text-teal-700 font-medium">Catene del Food</a>
-                <a href="#aderisci" class="text-slate-600 hover:text-teal-700 font-medium">Sei un Ristoratore?</a>
-                <a href="#lavoratori" class="text-slate-600 hover:text-teal-700 font-medium">Sei un Professionista?</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#cerca-ristoranti" class="hidden md:inline-block btn-secondary">Esplora</a>
-                <button id="loginBtn" class="btn-primary">Accedi</button>
-            </div>
-        </nav>
-    </header>
+<!-- ==============================
+     HEADER / NAVBAR
+     ============================== -->
+<header class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-100">
+  <nav class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#home" class="flex items-center space-x-2 shrink-0">
+      <div class="bg-teal-700 rounded-lg p-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+        </svg>
+      </div>
+      <span class="text-xl font-extrabold text-slate-900 tracking-tight">RPL</span>
+    </a>
 
-    <!-- Main -->
-    <main class="container mx-auto px-6 py-10 space-y-16">
-        <!-- Home Page -->
-        <div id="home" class="active">
-            <section class="text-center py-16">
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="text-5xl font-extrabold text-slate-900 leading-tight">Ristorazione Pro League</h1>
-                    <p class="mt-4 text-lg text-slate-600">
-                        La prima piattaforma che valorizza ristoratori e professionisti, 
-                        con un sistema di leghe meritocratico, iProfile e un mercato del lavoro etico.
-                    </p>
-                    <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href="#cerca-ristoranti" class="btn-primary">Trova un Ristorante RPL</a>
-                        <a href="https://github.com/vincenzofdg/Ristorazione-Pro-League" target="_blank" class="btn-secondary">Scopri il Progetto su GitHub</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="py-16">
-                <h2 class="section-title text-center mb-12">I Nostri Pilastri</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="card p-8 text-center">
-                        <div class="mx-auto bg-teal-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-lucide="shield-check" class="text-teal-700"></i>
-                        </div>
-                        <h3 class="mt-6 text-xl font-bold text-slate-800">Trasparenza e Etica</h3>
-                        <p class="mt-2 text-slate-600">Contratti equi, Fair Play Finanziario e un codice di condotta rigoroso per un ambiente di lavoro sano e corretto.</p>
-                    </div>
-                    <div class="card p-8 text-center">
-                        <div class="mx-auto bg-teal-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-lucide="trending-up" class="text-teal-700"></i>
-                        </div>
-                        <h3 class="mt-6 text-xl font-bold text-slate-800">Crescita Professionale</h3>
-                        <p class="mt-2 text-slate-600">Con l'iProfile e la formazione continua, ogni professionista ha un percorso di carriera chiaro e meritocratico.</p>
-                    </div>
-                    <div class="card p-8 text-center">
-                        <div class="mx-auto bg-teal-100 rounded-full h-16 w-16 flex items-center justify-center">
-                            <i data-lucide="leaf" class="text-teal-700"></i>
-                        </div>
-                        <h3 class="mt-6 text-xl font-bold text-slate-800">Sostenibilità e Territorio</h3>
-                        <p class="mt-2 text-slate-600">Promuoviamo la filiera corta, la riduzione degli sprechi e un legame forte con la comunità e l'ambiente.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Cerca Ristoranti Page -->
-        <div id="cerca-ristoranti">
-            <h1 class="section-title mb-8">Scopri i Ristoranti RPL</h1>
-            <div class="bg-white p-6 rounded-xl shadow-sm mb-8 flex flex-wrap gap-4 items-center">
-                <input type="text" placeholder="Cerca per nome, città o cucina..." class="flex-grow border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
-                <select class="border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
-                    <option>Filtra per Lega</option>
-                    <option>Elite</option>
-                    <option>Lega A</option>
-                    <option>Lega B</option>
-                    <option>Lega C</option>
-                    <option>Lega D</option>
-                </select>
-                <button class="btn-primary">Cerca</button>
-            </div>
-
-            <div id="restaurant-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- I ristoranti verranno inseriti qui da JavaScript -->
-            </div>
-        </div>
-
-        <!-- Dettaglio Ristorante (Template) -->
-        <div id="dettaglio-ristorante">
-            <!-- Il contenuto verrà inserito qui da JavaScript -->
-        </div>
-
-        <!-- Catene del Food -->
-        <div id="catene-food">
-            <h1 class="section-title mb-2">Catene del Food & Dipendenti</h1>
-            <p class="text-slate-600 mb-8">Scopri le principali catene della ristorazione organizzata in Italia, le condizioni di lavoro dei loro dipendenti e come RPL supporta la crescita professionale in questo segmento.</p>
-
-            <!-- Statistiche di riepilogo -->
-            <div class="grid md:grid-cols-4 gap-6 mb-10">
-                <div class="card p-6 text-center">
-                    <p class="text-3xl font-extrabold text-teal-700">5</p>
-                    <p class="text-slate-500 mt-1 text-sm">Catene nel Circuito</p>
-                </div>
-                <div class="card p-6 text-center">
-                    <p class="text-3xl font-extrabold text-teal-700">27.800</p>
-                    <p class="text-slate-500 mt-1 text-sm">Dipendenti Totali</p>
-                </div>
-                <div class="card p-6 text-center">
-                    <p class="text-3xl font-extrabold text-teal-700">950</p>
-                    <p class="text-slate-500 mt-1 text-sm">Sedi in Italia</p>
-                </div>
-                <div class="card p-6 text-center">
-                    <p class="text-3xl font-extrabold text-teal-700">1.400</p>
-                    <p class="text-slate-500 mt-1 text-sm">Dipendenti con iProfile RPL</p>
-                </div>
-            </div>
-
-            <!-- Cos'è RPL per le catene -->
-            <div class="bg-teal-50 border border-teal-200 rounded-xl p-6 mb-10">
-                <div class="flex items-start gap-4">
-                    <div class="bg-teal-100 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="building-2" class="text-teal-700"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-800">RPL e le Catene del Food</h2>
-                        <p class="mt-2 text-slate-700">Le catene della ristorazione organizzata impiegano centinaia di migliaia di lavoratori in Italia. RPL porta in questo segmento strumenti di merito, trasparenza e crescita professionale: ogni dipendente può costruire il proprio <strong>iProfile</strong>, certificare le competenze e accedere al mercato del lavoro RPL, indipendentemente dalla dimensione del datore di lavoro.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lista catene -->
-            <div id="catene-food-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Le catene verranno inserite qui da JavaScript -->
-            </div>
-        </div>
-
-        <!-- Dettaglio Catena del Food -->
-        <div id="dettaglio-catena">
-            <!-- Il contenuto verrà inserito qui da JavaScript -->
-        </div>
-
-        <!-- Dashboard Ristoratore -->
-        <div id="dashboard-ristoratore">
-            <div class="flex justify-between items-center mb-8">
-                <h1 class="section-title">Dashboard Ristoratore</h1>
-                <div class="text-right">
-                    <h2 class="text-2xl font-bold text-slate-800">Trattoria del Ponte</h2>
-                    <p class="text-slate-600">ID Ristorante: #12345</p>
-                </div>
-            </div>
-
-            <!-- Widgets -->
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="card p-6 flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-medium text-slate-500">La tua Lega</p>
-                        <p class="text-2xl font-bold text-slate-800">Lega B</p>
-                    </div>
-                    <span class="lega-badge lega-b">Professional</span>
-                </div>
-                <div class="card p-6">
-                    <p class="text-sm font-medium text-slate-500">Punteggio Etico</p>
-                    <div class="flex items-center space-x-2 mt-2">
-                        <p class="text-2xl font-bold text-slate-800">88/100</p>
-                        <span class="text-green-600 font-semibold flex items-center"><i data-lucide="arrow-up" class="w-4 h-4"></i>+3 dall'ultimo audit</span>
-                    </div>
-                </div>
-                <div class="card p-6">
-                    <p class="text-sm font-medium text-slate-500">Personale Attivo</p>
-                    <p class="text-2xl font-bold text-slate-800">12 Membri</p>
-                </div>
-            </div>
-
-            <!-- Sezioni principali -->
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-2">
-                    <div class="card p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-4">Gestione Personale</h3>
-                        <div id="staff-list-ristoratore">
-                            <!-- Elenco staff inserito da JS -->
-                        </div>
-                        <button class="mt-4 btn-primary w-full">Aggiungi Membro Staff</button>
-                    </div>
-                </div>
-                <div class="space-y-8">
-                    <div class="card p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-4">Mercato Talenti</h3>
-                        <p class="text-slate-600 mb-4">La finestra di trasferimento autunnale è aperta.</p>
-                        <button class="btn-secondary w-full">Cerca Talenti</button>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="text-xl font-bold text-slate-800 mb-4">Prossimo Audit</h3>
-                        <p class="text-slate-600">Il tuo prossimo audit è previsto per il <span class="font-semibold">15 Ottobre 2025</span>.</p>
-                        <button class="mt-4 btn-secondary w-full">Prepara Documenti</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dashboard Lavoratore / iProfile -->
-        <div id="dashboard-lavoratore">
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="bg-teal-700 h-32 p-6 flex justify-between items-start">
-                    <h1 class="text-3xl font-bold text-white">Il mio iProfile</h1>
-                    <button class="text-white hover:bg-white/20 p-2 rounded-full"><i data-lucide="edit"></i></button>
-                </div>
-                <div class="p-6 relative">
-                    <img src="https://placehold.co/128x128/0d9488/FFFFFF?text=MF" alt="Mario Rossi" class="h-32 w-32 rounded-full border-4 border-white -mt-20">
-                    <div class="mt-4">
-                        <h2 class="text-3xl font-bold text-slate-800">Mario Rossi</h2>
-                        <p class="text-teal-700 font-semibold text-lg">Chef de Partie</p>
-                        <p class="text-slate-600">Presso: Trattoria del Ponte</p>
-                    </div>
-                    <div class="mt-6 flex items-center space-x-2">
-                        <i data-lucide="award" class="text-slate-500"></i>
-                        <span class="text-slate-600">Membro RPL dal 2023</span>
-                    </div>
-                </div>
-                <div class="p-6 border-t border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Competenze Principali</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-medium">Cucina Sottovuoto</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-medium">Gestione Partite</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-medium">HACCP Avanzato</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-medium">Riduzione Sprechi</span>
-                    </div>
-                </div>
-                <div class="p-6 border-t border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Feedback Recenti</h3>
-                    <div class="space-y-4">
-                        <div class="bg-slate-50 p-4 rounded-lg">
-                            <p class="italic text-slate-700">"Mario è un professionista eccezionale, sempre preciso e propositivo. Un valore aggiunto per la nostra brigata."</p>
-                            <p class="mt-2 text-right font-semibold text-sm text-slate-500">- Chef Giovanni Bianchi, Manager</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6 border-t border-slate-200 bg-slate-50">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Opportunità di Mercato</h3>
-                    <p class="text-slate-600 mb-4">Esplora nuove sfide professionali nel circuito RPL.</p>
-                    <button class="btn-primary w-full">Vedi Posizioni Aperte</button>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-16">
-        <div class="container mx-auto px-6 py-8 grid md:grid-cols-3 gap-8">
-            <div>
-                <h4 class="font-bold text-slate-800">RPL</h4>
-                <p class="text-slate-600 mt-2">La piattaforma che rivoluziona il lavoro nella ristorazione.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-800">Link Utili</h4>
-                <ul class="mt-2 space-y-2 text-slate-600">
-                    <li><a href="#cerca-ristoranti" class="hover:text-teal-700">Trova Ristoranti</a></li>
-                    <li><a href="#catene-food" class="hover:text-teal-700">Catene del Food</a></li>
-                    <li><a href="#aderisci" class="hover:text-teal-700">Aderisci come Ristorante</a></li>
-                    <li><a href="#lavoratori" class="hover:text-teal-700">Sei un Professionista?</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-800">Contatti</h4>
-                <p class="text-slate-600 mt-2">info@rpl.example</p>
-            </div>
-        </div>
-        <div class="text-center text-slate-500 text-sm py-4 border-t">© 2025 Ristorazione Pro League</div>
-    </footer>
-
-    <!-- Modale Login -->
-    <div id="loginModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center">
-        <div class="bg-white rounded-xl shadow-xl p-6 w-full max-w-md relative">
-            <button id="closeModal" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">&times;</button>
-            <h2 class="text-2xl font-bold text-center text-slate-800 mb-6">Accedi alla Piattaforma</h2>
-            <div class="space-y-4">
-                <button id="loginRistoratore" class="w-full btn-primary">Accedi come Ristoratore</button>
-                <button id="loginLavoratore" class="w-full btn-secondary">Accedi come Professionista</button>
-            </div>
-            <p class="text-center text-sm text-slate-500 mt-6">Questo è un prototipo. Clicca per vedere le dashboard dedicate.</p>
-        </div>
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center space-x-1">
+      <a href="#cerca-ristoranti" class="nav-link px-3 py-2 text-slate-600 hover:text-teal-700 font-medium rounded-lg hover:bg-teal-50 transition">Trova Ristoranti</a>
+      <a href="#catene-food"      class="nav-link px-3 py-2 text-slate-600 hover:text-teal-700 font-medium rounded-lg hover:bg-teal-50 transition">Catene Food</a>
+      <a href="#aderisci"         class="nav-link px-3 py-2 text-slate-600 hover:text-teal-700 font-medium rounded-lg hover:bg-teal-50 transition">Ristoratori</a>
+      <a href="#lavoratori"       class="nav-link px-3 py-2 text-slate-600 hover:text-teal-700 font-medium rounded-lg hover:bg-teal-50 transition">Professionisti</a>
     </div>
 
-    <!-- App scripts -->
-    <script src="src/api.js"></script>
-    <script src="src/components.js"></script>
-    <script src="src/main.js"></script>
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center space-x-3">
+      <!-- API status indicator -->
+      <div id="api-status" class="flex items-center gap-1.5 text-xs text-slate-500">
+        <span class="api-status-dot checking" id="api-dot"></span>
+        <span id="api-label">API…</span>
+      </div>
+      <button id="loginBtn" class="btn-primary text-sm py-2 px-4">Accedi</button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="hamburger" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition" aria-label="Menu">
+      <i data-lucide="menu" class="w-6 h-6 text-slate-700"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden border-t border-slate-100 bg-white px-4 pb-4">
+    <div class="flex flex-col space-y-1 pt-3">
+      <a href="#cerca-ristoranti" class="mobile-nav-link px-3 py-2.5 text-slate-700 font-medium rounded-lg hover:bg-teal-50 hover:text-teal-700 transition">🍽️ Trova Ristoranti</a>
+      <a href="#catene-food"      class="mobile-nav-link px-3 py-2.5 text-slate-700 font-medium rounded-lg hover:bg-teal-50 hover:text-teal-700 transition">🏢 Catene Food</a>
+      <a href="#aderisci"         class="mobile-nav-link px-3 py-2.5 text-slate-700 font-medium rounded-lg hover:bg-teal-50 hover:text-teal-700 transition">📋 Ristoratori</a>
+      <a href="#lavoratori"       class="mobile-nav-link px-3 py-2.5 text-slate-700 font-medium rounded-lg hover:bg-teal-50 hover:text-teal-700 transition">👤 Professionisti</a>
+      <button id="loginBtnMobile" class="btn-primary text-sm mt-2 w-full">Accedi</button>
+    </div>
+  </div>
+</header>
+
+<!-- ==============================
+     MAIN CONTENT
+     ============================== -->
+<main class="container mx-auto px-4 md:px-6 py-8 space-y-16">
+
+  <!-- ========================
+       HOME PAGE
+       ======================== -->
+  <div id="home" class="active">
+
+    <!-- Hero -->
+    <section class="hero-gradient rounded-2xl text-white py-20 px-8 md:px-16 text-center mb-16 relative overflow-hidden">
+      <!-- decorative circles -->
+      <div class="absolute -top-12 -right-12 w-64 h-64 bg-white/5 rounded-full"></div>
+      <div class="absolute -bottom-16 -left-16 w-80 h-80 bg-white/5 rounded-full"></div>
+
+      <div class="relative max-w-3xl mx-auto fade-in-up">
+        <span class="inline-block bg-white/20 border border-white/30 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+          🏆 La prima Lega Meritocratica della Ristorazione Italiana
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">
+          Ristorazione<br>Pro League
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-teal-100 max-w-2xl mx-auto leading-relaxed">
+          Valorizziamo ristoratori e professionisti con un sistema di leghe meritocratico,
+          iProfile certificati e un mercato del lavoro etico e trasparente.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#cerca-ristoranti" class="bg-white text-teal-800 font-bold px-7 py-3 rounded-lg hover:bg-teal-50 transition shadow-lg">
+            Esplora i Ristoranti
+          </a>
+          <button id="heroLoginBtn" class="border-2 border-white text-white font-bold px-7 py-3 rounded-lg hover:bg-white/10 transition">
+            Inizia Ora — è Gratis
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform stats -->
+    <section class="mb-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card p-6 text-center">
+          <p class="text-3xl font-extrabold text-teal-700 stat-counter" data-target="6">0</p>
+          <p class="text-slate-500 mt-1 text-sm font-medium">Ristoranti RPL</p>
+        </div>
+        <div class="card p-6 text-center">
+          <p class="text-3xl font-extrabold text-teal-700 stat-counter" data-target="5">0</p>
+          <p class="text-slate-500 mt-1 text-sm font-medium">Catene Partner</p>
+        </div>
+        <div class="card p-6 text-center">
+          <p class="text-3xl font-extrabold text-teal-700 stat-counter" data-target="1400">0</p>
+          <p class="text-slate-500 mt-1 text-sm font-medium">iProfile Attivi</p>
+        </div>
+        <div class="card p-6 text-center">
+          <p class="text-3xl font-extrabold text-teal-700 stat-counter" data-target="27800">0</p>
+          <p class="text-slate-500 mt-1 text-sm font-medium">Dipendenti Totali</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="mb-16">
+      <h2 class="section-title text-center mb-3">I Nostri Pilastri</h2>
+      <p class="text-center text-slate-500 mb-10 max-w-xl mx-auto">RPL trasforma il settore della ristorazione costruendo un ecosistema basato su merito, trasparenza e crescita.</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-8 text-center">
+          <div class="mx-auto bg-teal-100 rounded-2xl h-16 w-16 flex items-center justify-center mb-5">
+            <i data-lucide="shield-check" class="text-teal-700 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800">Trasparenza e Etica</h3>
+          <p class="mt-3 text-slate-600 leading-relaxed">Contratti equi, Fair Play Finanziario e un codice di condotta rigoroso per un ambiente di lavoro sano e corretto.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="mx-auto bg-teal-100 rounded-2xl h-16 w-16 flex items-center justify-center mb-5">
+            <i data-lucide="trending-up" class="text-teal-700 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800">Crescita Professionale</h3>
+          <p class="mt-3 text-slate-600 leading-relaxed">Con l'iProfile e la formazione continua, ogni professionista ha un percorso di carriera chiaro e meritocratico.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="mx-auto bg-teal-100 rounded-2xl h-16 w-16 flex items-center justify-center mb-5">
+            <i data-lucide="leaf" class="text-teal-700 w-8 h-8"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800">Sostenibilità e Territorio</h3>
+          <p class="mt-3 text-slate-600 leading-relaxed">Promuoviamo la filiera corta, la riduzione degli sprechi e un legame forte con la comunità e l'ambiente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- League system explanation -->
+    <section class="mb-16">
+      <div class="card p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Sistema di Leghe</span>
+            <h2 class="section-title mt-2 mb-4">Come funziona il sistema RPL</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Ogni ristorante viene valutato su criteri etici, lavorativi e di sostenibilità.
+              In base al punteggio, viene inserito in una delle cinque leghe: dal <strong>livello Elite</strong>
+              (massima eccellenza) alla <strong>Lega D</strong> (avviamento al percorso).
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+              Le promozioni e retrocessioni avvengono tramite audit periodici certificati,
+              garantendo un sistema meritocratico e trasparente per tutti.
+            </p>
+            <a href="#cerca-ristoranti" class="btn-primary mt-6 inline-block">Scopri i Ristoranti</a>
+          </div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-yellow-50 border border-yellow-200">
+              <span class="lega-badge lega-elite w-20 text-center">Elite</span>
+              <div>
+                <p class="font-semibold text-slate-800">Punteggio ≥ 95/100</p>
+                <p class="text-sm text-slate-500">Eccellenza assoluta nel settore</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+              <span class="lega-badge lega-a w-20 text-center">Lega A</span>
+              <div>
+                <p class="font-semibold text-slate-800">Punteggio 88–94</p>
+                <p class="text-sm text-slate-500">Standard elevati, in crescita</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-sky-50 border border-sky-200">
+              <span class="lega-badge lega-b w-20 text-center">Lega B</span>
+              <div>
+                <p class="font-semibold text-slate-800">Punteggio 78–87</p>
+                <p class="text-sm text-slate-500">Buone pratiche in sviluppo</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-red-50 border border-red-200">
+              <span class="lega-badge lega-c w-20 text-center">Lega C</span>
+              <div>
+                <p class="font-semibold text-slate-800">Punteggio 65–77</p>
+                <p class="text-sm text-slate-500">Percorso di miglioramento attivo</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <span class="lega-badge lega-d w-20 text-center">Lega D</span>
+              <div>
+                <p class="font-semibold text-slate-800">Punteggio &lt; 65</p>
+                <p class="text-sm text-slate-500">Ingresso al circuito formativo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA bottom -->
+    <section class="text-center pb-8">
+      <div class="bg-teal-50 border border-teal-200 rounded-2xl p-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Sei pronto a fare parte della rivoluzione?</h2>
+        <p class="text-slate-600 mb-7 max-w-lg mx-auto">Unisciti a ristoratori e professionisti che stanno costruendo il futuro della ristorazione italiana.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#aderisci"   class="btn-primary">Aderisco come Ristorante</a>
+          <a href="#lavoratori" class="btn-secondary">Crea il mio iProfile</a>
+        </div>
+      </div>
+    </section>
+  </div><!-- /home -->
+
+  <!-- ========================
+       CERCA RISTORANTI
+       ======================== -->
+  <div id="cerca-ristoranti">
+    <h1 class="section-title mb-2">Scopri i Ristoranti RPL</h1>
+    <p class="text-slate-500 mb-8">Trova ristoranti certificati, etici e meritocratici vicino a te.</p>
+
+    <!-- Search bar -->
+    <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-100 mb-8 flex flex-wrap gap-3 items-center">
+      <div class="relative flex-grow min-w-[200px]">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+        <input id="search-input" type="text" placeholder="Cerca per nome, città o cucina…"
+               class="w-full pl-10 border border-slate-200 rounded-lg p-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition text-sm">
+      </div>
+      <select id="filter-lega" class="border border-slate-200 rounded-lg p-3 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition text-sm bg-white">
+        <option value="">Tutte le Leghe</option>
+        <option value="ELITE">Elite</option>
+        <option value="A">Lega A</option>
+        <option value="B">Lega B</option>
+        <option value="C">Lega C</option>
+        <option value="D">Lega D</option>
+      </select>
+      <button id="search-btn" class="btn-primary text-sm py-3">Cerca</button>
+      <button id="reset-btn"  class="btn-secondary text-sm py-3">Reset</button>
+    </div>
+
+    <div id="search-count" class="text-sm text-slate-500 mb-4"></div>
+    <div id="restaurant-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- Dettaglio Ristorante -->
+  <div id="dettaglio-ristorante"><!-- Populated by JS --></div>
+
+  <!-- ========================
+       CATENE DEL FOOD
+       ======================== -->
+  <div id="catene-food">
+    <h1 class="section-title mb-2">Catene del Food & Dipendenti</h1>
+    <p class="text-slate-500 mb-8">Scopri le principali catene della ristorazione organizzata in Italia e come RPL supporta i loro dipendenti.</p>
+
+    <!-- Summary stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="card p-6 text-center">
+        <p class="text-3xl font-extrabold text-teal-700">5</p>
+        <p class="text-slate-500 mt-1 text-sm">Catene nel Circuito</p>
+      </div>
+      <div class="card p-6 text-center">
+        <p class="text-3xl font-extrabold text-teal-700">27.800</p>
+        <p class="text-slate-500 mt-1 text-sm">Dipendenti Totali</p>
+      </div>
+      <div class="card p-6 text-center">
+        <p class="text-3xl font-extrabold text-teal-700">950</p>
+        <p class="text-slate-500 mt-1 text-sm">Sedi in Italia</p>
+      </div>
+      <div class="card p-6 text-center">
+        <p class="text-3xl font-extrabold text-teal-700">1.400</p>
+        <p class="text-slate-500 mt-1 text-sm">iProfile Attivi</p>
+      </div>
+    </div>
+
+    <!-- Info box -->
+    <div class="bg-teal-50 border border-teal-200 rounded-xl p-6 mb-10">
+      <div class="flex items-start gap-4">
+        <div class="bg-teal-100 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="building-2" class="text-teal-700"></i>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-800">RPL e le Catene del Food</h2>
+          <p class="mt-2 text-slate-700 leading-relaxed">Le catene della ristorazione organizzata impiegano centinaia di migliaia di lavoratori in Italia. RPL porta in questo segmento strumenti di merito, trasparenza e crescita professionale: ogni dipendente può costruire il proprio <strong>iProfile</strong>, certificare le competenze e accedere al mercato del lavoro RPL.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="catene-food-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- Dettaglio Catena -->
+  <div id="dettaglio-catena"><!-- Populated by JS --></div>
+
+  <!-- ========================
+       ADERISCI (FOR RESTAURANTS)
+       ======================== -->
+  <div id="aderisci">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <span class="inline-block bg-teal-100 text-teal-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Per Ristoratori</span>
+        <h1 class="section-title mb-3">Porta il tuo Ristorante nel Circuito RPL</h1>
+        <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">Fai parte dell'ecosistema che sta ridefinendo la ristorazione italiana. Ottieni riconoscimento, accedi ai migliori talenti e costruisci una reputazione solida.</p>
+      </div>
+
+      <!-- Benefits grid -->
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="star" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Sistema di Leghe Meritocratico</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Inizia dalla tua lega attuale e scala la classifica grazie a comportamenti etici certificati. Ogni miglioramento viene riconosciuto.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="users" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Accesso al Mercato dei Talenti</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Trova i professionisti più qualificati con iProfile certificati. Il matching avviene in base a competenze, esperienza e valori condivisi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="bar-chart-2" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Dashboard Analitica Avanzata</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Monitora il punteggio etico, gestisci il personale, traccia la crescita e preparati agli audit con strumenti digitali integrati.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="award" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Certificazioni e Premi</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Ottieni badge di eccellenza, partecipa ai premi annuali RPL e aumenta la visibilità del tuo ristorante verso clienti e professionisti.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Onboarding steps -->
+      <div class="card p-8 mb-12">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Come aderire in 3 step</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="w-12 h-12 rounded-full bg-teal-700 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
+            <h3 class="font-bold text-slate-800 mb-2">Registrazione</h3>
+            <p class="text-slate-600 text-sm">Crea il profilo del tuo ristorante, compila i dati di base e carica i documenti richiesti.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-full bg-teal-700 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
+            <h3 class="font-bold text-slate-800 mb-2">Audit Iniziale</h3>
+            <p class="text-slate-600 text-sm">Un auditor RPL certificato valuta le tue pratiche lavorative, contratti e standard etici. Ricevi il punteggio iniziale.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-full bg-teal-700 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
+            <h3 class="font-bold text-slate-800 mb-2">Ingresso nel Circuito</h3>
+            <p class="text-slate-600 text-sm">Vieni inserito nella lega corrispondente, accedi alla dashboard e inizia a connetterti con i talenti RPL.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="card p-7 border-2 border-slate-200">
+          <div class="text-center">
+            <h3 class="font-bold text-slate-800 text-xl mb-1">Starter</h3>
+            <p class="text-3xl font-extrabold text-teal-700 my-4">Gratis</p>
+            <p class="text-slate-500 text-sm mb-6">Per iniziare il percorso RPL</p>
+          </div>
+          <ul class="space-y-2.5 text-slate-700 text-sm mb-7">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Profilo ristorante pubblico</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Audit iniziale gratuito</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Lega D → C accessibile</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Community & supporto base</li>
+          </ul>
+          <button class="btn-secondary w-full text-sm" onclick="document.getElementById('loginBtn').click()">Inizia Gratis</button>
+        </div>
+        <div class="card p-7 border-2 border-teal-500 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-700 text-white text-xs font-bold px-4 py-1 rounded-full">PIÙ SCELTO</div>
+          <div class="text-center">
+            <h3 class="font-bold text-slate-800 text-xl mb-1">Professional</h3>
+            <p class="text-3xl font-extrabold text-teal-700 my-4">€79<span class="text-lg font-medium text-slate-500">/mese</span></p>
+            <p class="text-slate-500 text-sm mb-6">Per ristoranti in crescita</p>
+          </div>
+          <ul class="space-y-2.5 text-slate-700 text-sm mb-7">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Tutto di Starter</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Accesso Mercato Talenti</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Dashboard analitica completa</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Audit semestrale incluso</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Badge RPL verificato</li>
+          </ul>
+          <button class="btn-primary w-full text-sm" onclick="document.getElementById('loginBtn').click()">Scegli Professional</button>
+        </div>
+        <div class="card p-7 border-2 border-slate-200">
+          <div class="text-center">
+            <h3 class="font-bold text-slate-800 text-xl mb-1">Elite</h3>
+            <p class="text-3xl font-extrabold text-teal-700 my-4">€199<span class="text-lg font-medium text-slate-500">/mese</span></p>
+            <p class="text-slate-500 text-sm mb-6">Per l'eccellenza del settore</p>
+          </div>
+          <ul class="space-y-2.5 text-slate-700 text-sm mb-7">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Tutto di Professional</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Audit trimestrale prioritario</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Placement esclusivo talenti</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Account manager dedicato</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600 shrink-0"></i>Accesso alla Lega Elite</li>
+          </ul>
+          <button class="btn-secondary w-full text-sm" onclick="document.getElementById('loginBtn').click()">Contattaci</button>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn-primary px-10 py-4 text-lg" onclick="document.getElementById('loginBtn').click()">
+          Registra il Tuo Ristorante Ora
+        </button>
+        <p class="text-slate-500 text-sm mt-3">Audit iniziale gratuito · Nessuna carta richiesta · Cancella quando vuoi</p>
+      </div>
+    </div>
+  </div><!-- /aderisci -->
+
+  <!-- ========================
+       LAVORATORI / iPROFILE
+       ======================== -->
+  <div id="lavoratori">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <span class="inline-block bg-teal-100 text-teal-800 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Per Professionisti</span>
+        <h1 class="section-title mb-3">Il tuo iProfile: la tua Identità Professionale</h1>
+        <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">Costruisci un profilo professionale certificato e meritocratico. Fatti trovare dai migliori ristoranti e costruisci la carriera che meriti.</p>
+      </div>
+
+      <!-- iProfile preview card -->
+      <div class="card overflow-hidden mb-12">
+        <div class="hero-gradient h-24"></div>
+        <div class="px-6 pb-6 relative">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div class="flex items-end gap-4">
+              <img src="https://placehold.co/96x96/0d9488/FFFFFF?text=CM" alt="Chef" class="h-24 w-24 rounded-full border-4 border-white -mt-12">
+              <div class="-mb-1">
+                <h2 class="text-2xl font-bold text-slate-800">Carlo Mancini</h2>
+                <p class="text-teal-700 font-semibold">Sous Chef · 8 anni di esperienza</p>
+              </div>
+            </div>
+            <div class="sm:text-right">
+              <p class="text-xs text-slate-400 uppercase font-semibold tracking-wide">iProfile Score</p>
+              <p class="text-4xl font-black text-teal-700">87<span class="text-lg text-slate-400">/100</span></p>
+            </div>
+          </div>
+          <div class="mt-5 score-bar-bg">
+            <div class="score-bar-fill" style="width: 87%"></div>
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Cucina Fusion</span>
+            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Gestione Brigata</span>
+            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">HACCP Avanzato</span>
+            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Menu Engineering</span>
+            <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm">+4 certificazioni</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits for workers -->
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="user-check" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Identità Professionale Certificata</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Il tuo iProfile è un documento professionale verificato da RPL, con storico lavorativo, competenze e feedback reali dai tuoi datori di lavoro.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="briefcase" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Mercato del Lavoro Etico</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Accedi a offerte di lavoro verificate, con contratti chiari e stipendi dichiarati. Niente opacità, solo opportunità reali da ristoranti certificati RPL.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="graduation-cap" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Formazione Continua</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">Accedi a corsi, certificazioni e percorsi di crescita personalizzati. Ogni competenza acquisita aumenta il tuo iProfile Score.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-7">
+          <div class="flex items-start gap-4">
+            <div class="bg-teal-100 rounded-xl p-3 shrink-0">
+              <i data-lucide="shield" class="text-teal-700 w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 text-lg">Tutele e Diritti Garantiti</h3>
+              <p class="text-slate-600 mt-2 leading-relaxed">RPL verifica che ogni ristorante partner rispetti i tuoi diritti. Segnala irregolarità in modo sicuro e ricevi supporto diretto dalla piattaforma.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How iProfile score works -->
+      <div class="card p-8 mb-10">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Come si costruisce l'iProfile Score</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1">
+                <span class="text-slate-700">Esperienza verificata</span>
+                <span class="text-teal-700">30%</span>
+              </div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 30%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1">
+                <span class="text-slate-700">Competenze certificate</span>
+                <span class="text-teal-700">25%</span>
+              </div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 25%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1">
+                <span class="text-slate-700">Feedback da datori di lavoro</span>
+                <span class="text-teal-700">25%</span>
+              </div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 25%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-1">
+                <span class="text-slate-700">Formazione continua</span>
+                <span class="text-teal-700">20%</span>
+              </div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 20%"></div></div>
+            </div>
+          </div>
+          <div class="bg-teal-50 rounded-xl p-6">
+            <h3 class="font-bold text-slate-800 mb-3">Benefici dell'alto iProfile Score</h3>
+            <ul class="space-y-3 text-slate-700 text-sm">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-600 mt-0.5 shrink-0"></i>
+                Visibilità prioritaria nelle ricerche dei ristoranti
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-600 mt-0.5 shrink-0"></i>
+                Accesso a offerte esclusive di Lega A ed Elite
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-600 mt-0.5 shrink-0"></i>
+                Negoziazione salariale agevolata con dati oggettivi
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-teal-600 mt-0.5 shrink-0"></i>
+                Badge di eccellenza verificato e portabile
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="btn-primary px-10 py-4 text-lg" onclick="document.getElementById('loginBtn').click()">
+          Crea il tuo iProfile Gratis
+        </button>
+        <p class="text-slate-500 text-sm mt-3">Completamente gratuito per i professionisti · Sempre portabile · La tua carriera, il tuo futuro</p>
+      </div>
+    </div>
+  </div><!-- /lavoratori -->
+
+  <!-- ========================
+       DASHBOARD RISTORATORE
+       ======================== -->
+  <div id="dashboard-ristoratore">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <div>
+        <h1 class="section-title">Dashboard Ristoratore</h1>
+        <p class="text-slate-500 mt-1">Benvenuto nella tua area di gestione RPL</p>
+      </div>
+      <div class="text-right bg-white rounded-xl shadow-sm border border-slate-100 px-5 py-3">
+        <h2 class="text-xl font-bold text-slate-800">Trattoria del Ponte</h2>
+        <p class="text-slate-500 text-sm">ID Ristorante: #RPL-12345</p>
+      </div>
+    </div>
+
+    <!-- KPI widgets -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="card p-5">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">La tua Lega</p>
+        <div class="flex items-center justify-between">
+          <p class="text-2xl font-bold text-slate-800">Lega B</p>
+          <span class="lega-badge lega-b">Professional</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Prossimo audit: 15 Ott 2025</p>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Punteggio Etico</p>
+        <div class="flex items-center gap-2">
+          <p class="text-2xl font-bold text-slate-800">88/100</p>
+          <span class="text-emerald-600 font-semibold text-sm flex items-center gap-1">
+            <i data-lucide="arrow-up" class="w-3 h-3"></i>+3
+          </span>
+        </div>
+        <div class="score-bar-bg mt-2"><div class="score-bar-fill" style="width: 88%"></div></div>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Personale Attivo</p>
+        <p class="text-2xl font-bold text-slate-800">12 Membri</p>
+        <p class="text-xs text-slate-400 mt-2">4 con iProfile certificato</p>
+      </div>
+      <div class="card p-5">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Candidature Attive</p>
+        <p class="text-2xl font-bold text-teal-700">3</p>
+        <p class="text-xs text-slate-400 mt-2">2 in attesa di risposta</p>
+      </div>
+    </div>
+
+    <!-- Main sections -->
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Staff management -->
+        <div class="card p-6">
+          <div class="flex justify-between items-center mb-5">
+            <h3 class="text-lg font-bold text-slate-800">Gestione Personale</h3>
+            <button class="text-sm text-teal-700 font-semibold hover:underline">Vedi tutti →</button>
+          </div>
+          <div id="staff-list-ristoratore" class="space-y-1">
+            <!-- Populated by JS -->
+          </div>
+          <button class="mt-4 btn-primary w-full text-sm">
+            <span class="flex items-center justify-center gap-2">
+              <i data-lucide="user-plus" class="w-4 h-4"></i>
+              Aggiungi Membro Staff
+            </span>
+          </button>
+        </div>
+        <!-- Activity feed -->
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-slate-800 mb-5">Attività Recenti</h3>
+          <div class="space-y-0">
+            <div class="timeline-item pb-4">
+              <p class="text-sm font-semibold text-slate-700">Audit ETI completato con successo</p>
+              <p class="text-xs text-slate-400 mt-0.5">2 giorni fa · Punteggio: +3 punti</p>
+            </div>
+            <div class="timeline-item pb-4">
+              <p class="text-sm font-semibold text-slate-700">Nuova candidatura ricevuta — Cuoco di Linea</p>
+              <p class="text-xs text-slate-400 mt-0.5">5 giorni fa · iProfile Score: 84/100</p>
+            </div>
+            <div class="timeline-item pb-4">
+              <p class="text-sm font-semibold text-slate-700">Mario Rossi ha rinnovato la certificazione HACCP</p>
+              <p class="text-xs text-slate-400 mt-0.5">1 settimana fa</p>
+            </div>
+            <div class="timeline-item">
+              <p class="text-sm font-semibold text-slate-700">Pubblicata nuova offerta di lavoro — Sommelier</p>
+              <p class="text-xs text-slate-400 mt-0.5">2 settimane fa · 7 visualizzazioni</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-slate-800 mb-4">Mercato Talenti</h3>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+            <p class="text-sm font-medium text-amber-800">🔔 Finestra di Trasferimento Aperta</p>
+            <p class="text-xs text-amber-700 mt-1">Scade il 30 settembre 2025</p>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">Trova i migliori talenti certificati RPL disponibili nella tua zona.</p>
+          <button class="btn-secondary w-full text-sm">Cerca Talenti</button>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-slate-800 mb-3">Prossimo Audit</h3>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-teal-100 rounded-xl p-3">
+              <i data-lucide="calendar" class="text-teal-700 w-5 h-5"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800">15 Ottobre 2025</p>
+              <p class="text-xs text-slate-500">Audit semestrale ETI</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">Hai <strong class="text-slate-800">42 giorni</strong> per prepararti. Completa i documenti richiesti.</p>
+          <button class="btn-secondary w-full text-sm">Prepara Documenti</button>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold text-slate-800 mb-3">Avanzamento Lega</h3>
+          <p class="text-sm text-slate-600 mb-2">Punti per Lega A: 88/90</p>
+          <div class="score-bar-bg mb-3"><div class="score-bar-fill" style="width: 97.7%"></div></div>
+          <p class="text-xs text-slate-500">Mancano solo <strong class="text-teal-700">2 punti</strong> per salire in Lega A!</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- /dashboard-ristoratore -->
+
+  <!-- ========================
+       DASHBOARD LAVORATORE / iPROFILE
+       ======================== -->
+  <div id="dashboard-lavoratore">
+    <div class="max-w-3xl mx-auto">
+      <div class="card overflow-hidden">
+        <!-- Cover -->
+        <div class="hero-gradient h-36 relative">
+          <button class="absolute top-4 right-4 bg-white/20 hover:bg-white/30 transition text-white p-2 rounded-full">
+            <i data-lucide="edit-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Profile header -->
+        <div class="px-6 pb-6 relative">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+            <div class="flex items-end gap-4">
+              <img src="https://placehold.co/112x112/0d9488/FFFFFF?text=MR" alt="Mario Rossi"
+                   class="h-28 w-28 rounded-full border-4 border-white -mt-14">
+              <div class="pb-1">
+                <div class="flex items-center gap-2">
+                  <h2 class="text-2xl font-bold text-slate-800">Mario Rossi</h2>
+                  <span class="bg-teal-100 text-teal-700 text-xs font-bold px-2 py-0.5 rounded-full">✓ Verificato</span>
+                </div>
+                <p class="text-teal-700 font-semibold">Chef de Partie</p>
+                <p class="text-slate-500 text-sm flex items-center gap-1">
+                  <i data-lucide="map-pin" class="w-3 h-3"></i>
+                  Trattoria del Ponte, Roma
+                </p>
+              </div>
+            </div>
+            <div class="sm:text-right pb-1">
+              <p class="text-xs text-slate-400 uppercase font-semibold tracking-wide">iProfile Score</p>
+              <p class="text-4xl font-black text-teal-700">82<span class="text-xl text-slate-400">/100</span></p>
+              <div class="score-bar-bg mt-1 w-32 sm:ml-auto">
+                <div class="score-bar-fill" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-600">
+            <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4 text-teal-600"></i>Membro RPL dal 2023</span>
+            <span class="flex items-center gap-1"><i data-lucide="briefcase" class="w-4 h-4 text-teal-600"></i>6 anni di esperienza</span>
+            <span class="flex items-center gap-1"><i data-lucide="star" class="w-4 h-4 text-teal-600"></i>3 certificazioni</span>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="p-6 border-t border-slate-100">
+          <h3 class="text-lg font-bold text-slate-800 mb-4">Competenze Certificate</h3>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="font-medium text-slate-700">Cucina Sottovuoto</span><span class="text-teal-700 font-semibold">Expert</span></div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 92%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="font-medium text-slate-700">Gestione Partite</span><span class="text-teal-700 font-semibold">Senior</span></div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 78%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="font-medium text-slate-700">HACCP Avanzato</span><span class="text-teal-700 font-semibold">Certificato</span></div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 100%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span class="font-medium text-slate-700">Riduzione Sprechi</span><span class="text-teal-700 font-semibold">Avanzato</span></div>
+              <div class="score-bar-bg"><div class="score-bar-fill" style="width: 85%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback -->
+        <div class="p-6 border-t border-slate-100">
+          <h3 class="text-lg font-bold text-slate-800 mb-4">Feedback Verificati</h3>
+          <div class="space-y-4">
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <div class="flex items-center gap-1 mb-2">
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+              </div>
+              <p class="italic text-slate-700 text-sm">"Mario è un professionista eccezionale, sempre preciso e propositivo. Un valore aggiunto per la nostra brigata."</p>
+              <p class="mt-2 text-right text-xs font-semibold text-slate-400">— Chef Giovanni Bianchi, Executive Chef · Lega B</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <div class="flex items-center gap-1 mb-2">
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 text-slate-200 fill-slate-200"></i>
+              </div>
+              <p class="italic text-slate-700 text-sm">"Ottima conoscenza delle tecniche moderne e grande sensibilità nella riduzione degli sprechi. Consigliato."</p>
+              <p class="mt-2 text-right text-xs font-semibold text-slate-400">— Lucia Ferri, Restaurant Manager · Lega A</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job opportunities -->
+        <div class="p-6 border-t border-slate-100 bg-slate-50">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-800">Opportunità di Mercato</h3>
+            <span class="bg-teal-700 text-white text-xs font-bold px-2.5 py-1 rounded-full">3 nuove</span>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">Basate sul tuo iProfile, i seguenti ristoranti ti hanno proposto un colloquio:</p>
+          <div class="space-y-3 mb-5">
+            <div class="bg-white rounded-lg p-3 border border-slate-100 flex items-center justify-between">
+              <div>
+                <p class="font-semibold text-slate-800 text-sm">Gourmet Futuro</p>
+                <p class="text-xs text-slate-500">Sous Chef · Lega A · Milano</p>
+              </div>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-full">Match 94%</span>
+            </div>
+            <div class="bg-white rounded-lg p-3 border border-slate-100 flex items-center justify-between">
+              <div>
+                <p class="font-semibold text-slate-800 text-sm">Sea & Stars</p>
+                <p class="text-xs text-slate-500">Chef de Partie · Lega A · Napoli</p>
+              </div>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-full">Match 88%</span>
+            </div>
+          </div>
+          <button class="btn-primary w-full text-sm">Vedi Tutte le Posizioni Aperte</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /dashboard-lavoratore -->
+
+</main>
+
+<!-- ==============================
+     FOOTER
+     ============================== -->
+<footer class="bg-white border-t border-slate-200 mt-16">
+  <div class="container mx-auto px-4 md:px-6 py-10 grid md:grid-cols-4 gap-8">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="bg-teal-700 rounded-lg p-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+          </svg>
+        </div>
+        <span class="font-extrabold text-slate-800 text-lg">RPL</span>
+      </div>
+      <p class="text-slate-500 text-sm leading-relaxed">La piattaforma che rivoluziona il lavoro nella ristorazione italiana.</p>
+      <!-- API status in footer -->
+      <div class="flex items-center gap-2 mt-4 text-xs text-slate-400">
+        <span class="api-status-dot checking" id="api-dot-footer"></span>
+        <span id="api-label-footer">Connessione API…</span>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">Piattaforma</h4>
+      <ul class="space-y-2 text-slate-500 text-sm">
+        <li><a href="#cerca-ristoranti" class="hover:text-teal-700 transition">Trova Ristoranti</a></li>
+        <li><a href="#catene-food"      class="hover:text-teal-700 transition">Catene del Food</a></li>
+        <li><a href="#aderisci"         class="hover:text-teal-700 transition">Aderisci come Ristorante</a></li>
+        <li><a href="#lavoratori"       class="hover:text-teal-700 transition">Crea il tuo iProfile</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">Progetto</h4>
+      <ul class="space-y-2 text-slate-500 text-sm">
+        <li><a href="https://github.com/HUSTLEROPERATOR/Ristorazione-Pro-League" target="_blank" class="hover:text-teal-700 transition">GitHub</a></li>
+        <li><a href="docs/Indice.md" class="hover:text-teal-700 transition">Documentazione</a></li>
+        <li><a href="ROADMAP.md"     class="hover:text-teal-700 transition">Roadmap</a></li>
+        <li><a href="CONTRIBUTING.md" class="hover:text-teal-700 transition">Contribuisci</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wider">Contatti</h4>
+      <ul class="space-y-2 text-slate-500 text-sm">
+        <li>📧 info@rpl.example</li>
+        <li>��🇹 Italia · Sardegna Pilot</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-100 text-center text-slate-400 text-sm py-4">
+    © 2025 Ristorazione Pro League · Tutti i diritti riservati
+  </div>
+</footer>
+
+<!-- ==============================
+     LOGIN MODAL
+     ============================== -->
+<div id="loginModal">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-sm relative mx-4">
+    <button id="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition text-2xl leading-none">&times;</button>
+    <div class="text-center mb-7">
+      <div class="bg-teal-100 rounded-2xl h-14 w-14 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="log-in" class="text-teal-700 w-7 h-7"></i>
+      </div>
+      <h2 class="text-2xl font-bold text-slate-800">Accedi a RPL</h2>
+      <p class="text-slate-500 text-sm mt-1">Seleziona il tipo di accesso</p>
+    </div>
+    <div class="space-y-3 mb-5">
+      <button id="loginRistoratore" class="w-full btn-primary flex items-center justify-center gap-3 py-3.5">
+        <i data-lucide="utensils" class="w-5 h-5"></i>
+        <span>Accedi come Ristoratore</span>
+      </button>
+      <button id="loginLavoratore" class="w-full btn-secondary flex items-center justify-center gap-3 py-3.5">
+        <i data-lucide="user" class="w-5 h-5"></i>
+        <span>Accedi come Professionista</span>
+      </button>
+    </div>
+    <!-- Backend login form (shown after selecting type) -->
+    <div id="loginForm" class="hidden border-t border-slate-100 pt-5">
+      <h3 class="text-sm font-semibold text-slate-600 mb-3" id="loginFormTitle">Login Ristoratore</h3>
+      <div class="space-y-3">
+        <input id="loginEmail" type="email" placeholder="Email" class="w-full border border-slate-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+        <input id="loginPassword" type="password" placeholder="Password" class="w-full border border-slate-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+        <button id="submitLogin" class="w-full btn-primary text-sm py-3">Entra</button>
+        <div id="loginError" class="hidden text-xs text-red-600 text-center bg-red-50 rounded-lg p-2"></div>
+        <div id="loginSuccess" class="hidden text-xs text-emerald-700 text-center bg-emerald-50 rounded-lg p-2"></div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-400 mt-4">Prototipo dimostrativo RPL · <a href="#aderisci" class="text-teal-700 hover:underline" id="registerLink">Registrati</a></p>
+  </div>
+</div>
+
+<!-- ==============================
+     APP SCRIPTS
+     ============================== -->
+<script src="src/api.js"></script>
+<script src="src/components.js"></script>
+<script src="src/main.js"></script>
 </body>
 </html>
-
