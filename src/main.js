@@ -23,6 +23,12 @@ function handleNavigation() {
       renderDettaglioRistorante(ristoranteId);
     }
     showPage('dettaglio-ristorante');
+  } else if (pageId.startsWith('dettaglio-catena')) {
+    const catenaId = parseInt(hash.split('/')[1]);
+    if (!Number.isNaN(catenaId)) {
+      renderDettaglioCatena(catenaId);
+    }
+    showPage('dettaglio-catena');
   } else if (document.getElementById(pageId)) {
     showPage(pageId);
   } else {
@@ -66,6 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Popola sezioni dinamiche
   if (typeof renderRestaurantList === 'function') renderRestaurantList();
   if (typeof renderStaffList === 'function') renderStaffList();
+  if (typeof renderCateneFood === 'function') renderCateneFood();
   // Router
   handleNavigation();
   window.addEventListener('hashchange', handleNavigation);
