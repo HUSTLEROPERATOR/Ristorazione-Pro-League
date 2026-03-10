@@ -66,3 +66,11 @@ Vedi: `docs/client-onboarding-workflow.md`
 | Playbook | Transizione | Descrizione |
 |----------|------------|-------------|
 | [`playbooks/pre-rpl-to-lite-playbook.md`](playbooks/pre-rpl-to-lite-playbook.md) | Pre-RPL → RPL Lite | Guida pratica 90 giorni per portare un ristorante all'idoneità RPL Lite |
+
+---
+
+## Template KPI — Pre-RPL → Lite
+
+| Template | Fase | Descrizione |
+|----------|------|-------------|
+| [`templates/rpl_kpi_tracking_sheet.md`](templates/rpl_kpi_tracking_sheet.md) | Fase 7 — KPI & Data Loop | Foglio settimanale di tracciamento KPI minimi (revenue, coperti, food cost, labor cost, sprechi, recensioni) — usato durante la trasformazione Pre-RPL → Lite; produce l'evidenza A4 per l'application package RPL Lite |
