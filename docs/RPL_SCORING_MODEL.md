@@ -316,6 +316,7 @@ See also: templates/RPL_SCORECARD_TEMPLATE.md
 - `docs/RPL_AUDIT_PROCESS.md` — Procedura operativa di audit: fasi, evidenze, compilazione scorecard e output
 - `consulting-os/README.md` — Modulo di trasformazione operativa
 - `docs/RPL_OPERATIONAL_CORE.md` — Visione e principi fondatori RPL
+- `docs/RPL_STAGE_TRANSITIONS.md` — Decision framework that operationalizes the thresholds and warning/recovery logic defined in this model
 
 ---
 

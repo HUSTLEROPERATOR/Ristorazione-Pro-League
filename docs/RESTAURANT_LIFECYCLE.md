@@ -157,3 +157,4 @@ Il consulente che applica il metodo `consulting-os/` guida il ristorante attrave
 - `docs/RPL_AUDIT_PROCESS.md` — Procedura pratica di audit: come si svolge, chi lo esegue, come si compila la scorecard e si valida il punteggio
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Processo di audit ufficiale
 - `docs/04_Progetto_Pilota_Sardegna.md` — Applicazione pratica del lifecycle in Sardegna
+- `docs/RPL_STAGE_TRANSITIONS.md` — Rules governing entry, upgrade, warning, downgrade, and suspension between the lifecycle stages
