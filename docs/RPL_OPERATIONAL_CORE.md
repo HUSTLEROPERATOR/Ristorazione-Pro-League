@@ -134,6 +134,7 @@ RPL Excellence (mentorship, visibilità nazionale)
 ## Documenti correlati
 
 - `docs/RESTAURANT_LIFECYCLE.md` — Ciclo di vita del ristorante all'interno di RPL
+- `docs/RPL_SCORING_MODEL.md` — Modello di punteggio: come si misurano i progressi
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica tecnica del modello RPL Lite
 - `consulting-os/README.md` — Modulo di trasformazione operativa
 - `docs/Regolamento_Generale/` — Regole dettagliate per ogni area

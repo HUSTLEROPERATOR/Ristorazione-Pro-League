@@ -151,6 +151,7 @@ Il consulente che applica il metodo `consulting-os/` guida il ristorante attrave
 ## Documenti correlati
 
 - `docs/RPL_OPERATIONAL_CORE.md` — Visione d'insieme del sistema RPL
+- `docs/RPL_SCORING_MODEL.md` — Modello di punteggio: come si traducono gli stadi del lifecycle in soglie numeriche verificabili
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica dettagliata del modello RPL Lite
 - `consulting-os/docs/service-modules.md` — Le 7 fasi del metodo di trasformazione
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Processo di audit ufficiale

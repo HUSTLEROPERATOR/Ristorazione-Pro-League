@@ -6,8 +6,9 @@ Questa pagina funge da indice centrale per i documenti del progetto. I file sono
 
 Leggi questi prima per capire il sistema RPL nel suo insieme:
 
-- [`RPL_OPERATIONAL_CORE.md`](RPL_OPERATIONAL_CORE.md) — **[NUOVO]** Cos'è RPL, i quattro pilastri, gli attori e come funziona il sistema
-- [`RESTAURANT_LIFECYCLE.md`](RESTAURANT_LIFECYCLE.md) — **[NUOVO]** Ciclo di vita del ristorante: Pre-RPL → Lite → Standard → Excellence
+- [`RPL_OPERATIONAL_CORE.md`](RPL_OPERATIONAL_CORE.md) — Cos'è RPL, i quattro pilastri, gli attori e come funziona il sistema
+- [`RESTAURANT_LIFECYCLE.md`](RESTAURANT_LIFECYCLE.md) — Ciclo di vita del ristorante: Pre-RPL → Lite → Standard → Excellence
+- [`RPL_SCORING_MODEL.md`](RPL_SCORING_MODEL.md) — **[NUOVO]** Modello di punteggio RPL: aree, pesi, soglie, progressione e scorecard
 - [`05_Piano_B_RPL_Lite.md`](05_Piano_B_RPL_Lite.md) — Modello entry-level RPL Lite: requisiti, roadmap, vantaggi
 
 ## Documenti strategici
