@@ -36,6 +36,30 @@ Roadmap dettagliata: vedi ROADMAP.md
 ## Documentazione Principale
 Vedi docs/Indice.md
 
+## Consulting OS — Restaurant Transformation System
+
+Nuovo modulo operativo costruito con **BMAD Method v6**: un sistema operativo consulenziale
+riutilizzabile per la trasformazione di ristoranti indipendenti.
+
+Struttura completa in [`consulting-os/`](consulting-os/):
+
+| Sezione | Contenuto |
+|---------|----------|
+| `docs/` | Metodo, workflow BMAD, onboarding, architettura |
+| `templates/` | 11 template riutilizzabili (audit, SOP, menu, KPI, CRM, ecc.) |
+| `clients/` | Una cartella per ogni cliente ristorante |
+| `ops/` | Processi interni consulente (vendita, quality check) |
+| `automation/` | Flussi automatici (review request, newsletter) |
+| `kpi/` | Framework KPI e cadenza review |
+| `marketing/` | Proposte commerciali e case study |
+| `prompts/` | Libreria prompt AI per lavoro consulenziale |
+
+**7 fasi del metodo:** Audit → OS → Menu & Profitabilità → Team → Marketing → Automazioni → KPI
+
+Vedi [`consulting-os/README.md`](consulting-os/README.md) e [`consulting-os/docs/bmad-workflow.md`](consulting-os/docs/bmad-workflow.md)
+
+---
+
 ## Sicurezza & Segreti
 NON commitare file di segreti (chiavi / token). Ruota quelli già esposti.
 
