@@ -18,13 +18,65 @@ It is a **pure domain module** — no HTTP, no database, no auth. It takes struc
 
 ```
 backend/src/domain/rpl/
-├── scoring-types.ts          Input/output type definitions
-├── score-engine.ts           Numeric scoring primitives
+├── scoring-types.ts            Input/output type definitions
+├── score-engine.ts             Numeric scoring primitives
 └── stage-transition-engine.ts  Main evaluation function
 
+backend/src/scripts/
+└── rpl-score-cli.ts            CLI wrapper (reads JSON file → prints result)
+
+backend/examples/
+└── rpl-score-input.example.json  Ready-to-use example input
+
 backend/tests/
-└── rpl-score-engine.test.ts  Full test suite
+└── rpl-score-engine.test.ts    Full test suite
 ```
+
+---
+
+## CLI usage
+
+The CLI is the fastest way to run the engine without writing any code.
+
+**Run with an example input:**
+```bash
+cd backend
+npm run rpl:score -- examples/rpl-score-input.example.json
+```
+
+**Run with your own input file:**
+```bash
+npm run rpl:score -- /path/to/your-restaurant-scores.json
+```
+
+**Run directly with tsx:**
+```bash
+npx tsx src/scripts/rpl-score-cli.ts examples/rpl-score-input.example.json
+```
+
+**Example output** (for the included example — Lite restaurant qualifying for Standard):
+```json
+{
+  "totalScore": 76,
+  "areaScores": { "A1": 17, "A2": 15, "A3": 12, "A4": 11, "A5": 7, "A6": 7, "A7": 7 },
+  "recommendedStage": "RPL Standard",
+  "outcome": "upgrade_eligible",
+  "reasons": [
+    "Current stage: RPL Lite. Submitted scores qualify for RPL Standard.",
+    "All entry conditions for the higher stage are met. A formal upgrade audit is required to confirm."
+  ],
+  "blockingIssues": [],
+  "upgradeEligible": true,
+  "recoveryRequired": false,
+  "immediateActionRequired": false
+}
+```
+
+**Exit codes:**
+- `0` — engine ran successfully (inspect `outcome` for the decision)
+- `1` — missing file, invalid JSON, or out-of-range score values (error printed to stderr)
+
+**Input file format** — see `backend/examples/rpl-score-input.example.json` for a ready-to-copy template. The file must match the `RPLScoreInput` type (see [Input schema](#input-schema) below).
 
 ---
 

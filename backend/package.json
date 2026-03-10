@@ -15,6 +15,7 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "db:seed": "tsx src/scripts/seed.ts",
+    "rpl:score": "tsx src/scripts/rpl-score-cli.ts",
     "test": "jest",
     "test:watch": "jest --watch"
   },
