@@ -234,7 +234,8 @@ Questo modello non è un documento isolato. È il **meccanismo di collegamento**
 |-----------|----------------------------------------|
 | `docs/RESTAURANT_LIFECYCLE.md` | Definisce le soglie di avanzamento tra stadi (Lite → Standard → Excellence) che questo documento traduce in punteggi numerici concreti |
 | `docs/05_Piano_B_RPL_Lite.md` | Specifica i requisiti qualitativi di Lite; questo modello ne fissa le soglie quantitative verificabili |
-| `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` | Descrive il processo di audit; questo modello definisce cosa l'audit misura e come si traduce in punteggio |
+| `docs/RPL_AUDIT_PROCESS.md` | Definisce la procedura pratica di audit che applica questo modello sul campo: fasi, evidenze, compilazione scorecard, validazione e output |
+| `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` | Descrive la governance e gli enti di controllo del sistema di auditing; questo modello definisce cosa l'audit misura e come si traduce in punteggio |
 | `consulting-os/` | Il consulente usa questo modello come framework diagnostico nelle Fasi 1 e 7 (Audit e KPI Loop); ogni cliente riceve una scorecard RPL come output |
 
 ---
@@ -312,6 +313,7 @@ See also: templates/RPL_SCORECARD_TEMPLATE.md
 - `docs/RESTAURANT_LIFECYCLE.md` — Ciclo di vita e stadi RPL
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica RPL Lite
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Processo di audit
+- `docs/RPL_AUDIT_PROCESS.md` — Procedura operativa di audit: fasi, evidenze, compilazione scorecard e output
 - `consulting-os/README.md` — Modulo di trasformazione operativa
 - `docs/RPL_OPERATIONAL_CORE.md` — Visione e principi fondatori RPL
 

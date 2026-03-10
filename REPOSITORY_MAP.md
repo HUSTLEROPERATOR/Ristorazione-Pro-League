@@ -54,6 +54,7 @@ Ristorazione-Pro-League/
 │   ├── RPL_OPERATIONAL_CORE.md    ← [NUOVO] Core operativo reale di RPL
 │   ├── RESTAURANT_LIFECYCLE.md    ← [NUOVO] Ciclo di vita ristorante + RPL Lite
 │   ├── RPL_SCORING_MODEL.md       ← [NUOVO] Modello di punteggio: aree, pesi, soglie
+│   ├── RPL_AUDIT_PROCESS.md       ← [NUOVO] Procedura operativa di audit sul campo
 │   ├── 01_Introduzione_e_Visione.md
 │   ├── 02_Piano_di_Fattibilita.md
 │   ├── 03_Architettura_Tecnica.md
@@ -94,6 +95,7 @@ Ristorazione-Pro-League/
 | 🔴 Core | `docs/RPL_OPERATIONAL_CORE.md` | Cosa è RPL, come funziona, chi serve |
 | 🔴 Core | `docs/RESTAURANT_LIFECYCLE.md` | Ciclo di vita ristorante e modelli di entrata |
 | 🔴 Core | `docs/RPL_SCORING_MODEL.md` | Modello di punteggio: aree, pesi, soglie Lite/Standard/Excellence |
+| 🔴 Core | `docs/RPL_AUDIT_PROCESS.md` | Procedura operativa di audit: fasi, evidenze, output |
 | 🟡 Strategico | `docs/01_Introduzione_e_Visione.md` | Visione e obiettivi fondatori |
 | 🟡 Strategico | `docs/05_Piano_B_RPL_Lite.md` | Modello entry-level RPL Lite |
 | 🟡 Strategico | `docs/04_Progetto_Pilota_Sardegna.md` | Pilot regionale |
@@ -126,6 +128,7 @@ RPL_OPERATIONAL_CORE.md
 RESTAURANT_LIFECYCLE.md
         ↓ specifica il percorso
 RPL_SCORING_MODEL.md            → traduce il percorso in punteggi verificabili
+RPL_AUDIT_PROCESS.md            → applica il modello sul campo con procedura riproducibile
 05_Piano_B_RPL_Lite.md          → entry model dettagliato
 04_Progetto_Pilota_Sardegna.md  → applicazione pratica
         ↓ supporto attivo
