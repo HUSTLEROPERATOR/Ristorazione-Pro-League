@@ -5,18 +5,28 @@ Ecosistema meritocratico per la ristorazione: profili verificati, auditing, repu
 ## Perché
 Il settore soffre frammentazione, turnover, poca trasparenza e digitale incompleto. RPL propone una "lega" con regole, incentivi e strumenti moderni.
 
-## Moduli Core (fase iniziale)
-- Profili & Identità Professionale
+## Punti di ingresso rapidi
+
+| Documento | Cosa trovi |
+|-----------|-----------|
+| [`docs/RPL_OPERATIONAL_CORE.md`](docs/RPL_OPERATIONAL_CORE.md) | Cos'è RPL, come funziona, chi serve |
+| [`docs/RESTAURANT_LIFECYCLE.md`](docs/RESTAURANT_LIFECYCLE.md) | Ciclo di vita ristorante e modelli di entrata |
+| [`docs/05_Piano_B_RPL_Lite.md`](docs/05_Piano_B_RPL_Lite.md) | RPL Lite — il modello entry-level |
+| [`consulting-os/README.md`](consulting-os/README.md) | Modulo di supporto e trasformazione operativa |
+| [`REPOSITORY_MAP.md`](REPOSITORY_MAP.md) | Mappa completa del repository |
+
+## Moduli Core
+- Profili & Identità Professionale (iProfile)
 - Sistema di Auditing e Reputazione
 - Fair Play Finanziario (tracciabilità e conformità)
 - Premi & Riconoscimenti
 - Formazione & Crescita
 - Progetto Pilota (Sardegna)
-- Piano B (RPL Lite)
-- Sviluppi Futuri (API, marketplace, analytics avanzati)
+- RPL Lite (modello di entrata)
+- Consulting OS (supporto trasformazione ristoranti)
 
 ## Stato Attuale
-Documentazione strutturata in /docs. Prototipazione architettura. Raccolta dati di settore (in archivio).
+Documentazione strutturata in `/docs`. Sistema operativo consulenziale in `consulting-os/`. Infrastruttura tecnica in `backend/` (fase futura).
 
 ## Roadmap Breve (Sprint 0 → 3)
 | Sprint | Focus | Output |
@@ -26,37 +36,25 @@ Documentazione strutturata in /docs. Prototipazione architettura. Raccolta dati 
 | 2 | MVP Profilazione + reputazione base | Schema + API mock |
 | 3 | Auditing flow + premi seed | Workflow + badge seed |
 
-Roadmap dettagliata: vedi ROADMAP.md
+Roadmap dettagliata: vedi [ROADMAP.md](ROADMAP.md)
 
 ## Come Contribuire
-1. Leggi CONTRIBUTING.md
+1. Leggi [CONTRIBUTING.md](CONTRIBUTING.md)
 2. Cerca una issue con label `good-first-issue`
 3. Apri PR piccole e mirate
 
 ## Documentazione Principale
-Vedi docs/Indice.md
+Vedi [docs/Indice.md](docs/Indice.md)
 
-## Consulting OS — Restaurant Transformation System
+## Consulting OS — Modulo di Supporto Operativo
 
-Nuovo modulo operativo costruito con **BMAD Method v6**: un sistema operativo consulenziale
-riutilizzabile per la trasformazione di ristoranti indipendenti.
+Il modulo `consulting-os/` è il sistema operativo consulenziale costruito con **BMAD Method v6** per accompagnare i ristoranti nel percorso di trasformazione verso RPL Standard.
 
-Struttura completa in [`consulting-os/`](consulting-os/):
-
-| Sezione | Contenuto |
-|---------|----------|
-| `docs/` | Metodo, workflow BMAD, onboarding, architettura |
-| `templates/` | 11 template riutilizzabili (audit, SOP, menu, KPI, CRM, ecc.) |
-| `clients/` | Una cartella per ogni cliente ristorante |
-| `ops/` | Processi interni consulente (vendita, quality check) |
-| `automation/` | Flussi automatici (review request, newsletter) |
-| `kpi/` | Framework KPI e cadenza review |
-| `marketing/` | Proposte commerciali e case study |
-| `prompts/` | Libreria prompt AI per lavoro consulenziale |
+**Non è il prodotto principale di RPL** — è lo strumento che i consulenti usano per portare i ristoranti agli standard del programma.
 
 **7 fasi del metodo:** Audit → OS → Menu & Profitabilità → Team → Marketing → Automazioni → KPI
 
-Vedi [`consulting-os/README.md`](consulting-os/README.md) e [`consulting-os/docs/bmad-workflow.md`](consulting-os/docs/bmad-workflow.md)
+Vedi [`consulting-os/README.md`](consulting-os/README.md)
 
 ---
 
@@ -64,7 +62,7 @@ Vedi [`consulting-os/README.md`](consulting-os/README.md) e [`consulting-os/docs
 NON commitare file di segreti (chiavi / token). Ruota quelli già esposti.
 
 ## Licenza
-(TODO: scegliere — MIT / Apache-2.0 / altro)
+MIT — vedi [LICENSE](LICENSE)
 
 ## Contatti / Community (placeholder)
 - Email progetto: (da definire)
