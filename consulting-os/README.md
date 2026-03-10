@@ -11,6 +11,7 @@ Costruito secondo il **BMAD Method v6** come modulo operativo del progetto Risto
 ```
 consulting-os/
 ├── docs/                    # Documentazione di sistema e metodo
+├── playbooks/               # Playbook operativi per ogni transizione di stadio RPL
 ├── templates/               # Template riutilizzabili per ogni fase
 ├── clients/                 # Un cartella per ogni cliente ristorante
 │   └── _CLIENT-TEMPLATE/    # Template struttura cliente (da copiare)
@@ -59,3 +60,9 @@ Vedi: `docs/client-onboarding-workflow.md`
 - [Template System](docs/template-system.md)
 - [Module Map](docs/module-map.md)
 - [Implementation Phases](docs/implementation-phases.md)
+
+## Playbook
+
+| Playbook | Transizione | Descrizione |
+|----------|------------|-------------|
+| [`playbooks/pre-rpl-to-lite-playbook.md`](playbooks/pre-rpl-to-lite-playbook.md) | Pre-RPL → RPL Lite | Guida pratica 90 giorni per portare un ristorante all'idoneità RPL Lite |
