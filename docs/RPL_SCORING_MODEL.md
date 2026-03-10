@@ -307,6 +307,8 @@ Questo modello non è un documento isolato. È il **meccanismo di collegamento**
 
 ## Documenti correlati
 
+See also: templates/RPL_SCORECARD_TEMPLATE.md
+
 - `docs/RESTAURANT_LIFECYCLE.md` — Ciclo di vita e stadi RPL
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica RPL Lite
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Processo di audit
