@@ -23,3 +23,11 @@ Questo modulo supporterà il processo di verifica e la pubblicazione dei risulta
 2.  **Ispettorati del Lavoro:**
     *   Responsabili della verifica sul rispetto dei contratti, del salario minimo e delle condizioni lavorative.
     *   L'adesione alla RPL e il controllo periodico coordinato con questi ispettorati renderebbe il sistema più trasparente e tutelato.
+
+---
+
+## Documenti correlati
+
+- `docs/RPL_AUDIT_PROCESS.md` — Procedura operativa completa: chi esegue l'audit, fasi on-site/remoto, compilazione scorecard, validazione e output
+- `docs/RPL_SCORING_MODEL.md` — Aree di valutazione, pesi e soglie che l'audit misura
+- `templates/RPL_SCORECARD_TEMPLATE.md` — Documento di lavoro compilato dall'auditor durante ogni valutazione

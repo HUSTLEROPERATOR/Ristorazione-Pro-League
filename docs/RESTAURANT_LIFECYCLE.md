@@ -154,5 +154,6 @@ Il consulente che applica il metodo `consulting-os/` guida il ristorante attrave
 - `docs/RPL_SCORING_MODEL.md` — Modello di punteggio: come si traducono gli stadi del lifecycle in soglie numeriche verificabili
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica dettagliata del modello RPL Lite
 - `consulting-os/docs/service-modules.md` — Le 7 fasi del metodo di trasformazione
+- `docs/RPL_AUDIT_PROCESS.md` — Procedura pratica di audit: come si svolge, chi lo esegue, come si compila la scorecard e si valida il punteggio
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Processo di audit ufficiale
 - `docs/04_Progetto_Pilota_Sardegna.md` — Applicazione pratica del lifecycle in Sardegna
