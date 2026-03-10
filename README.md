@@ -13,6 +13,7 @@ Il settore soffre frammentazione, turnover, poca trasparenza e digitale incomple
 | [`docs/RESTAURANT_LIFECYCLE.md`](docs/RESTAURANT_LIFECYCLE.md) | Ciclo di vita ristorante e modelli di entrata |
 | [`docs/05_Piano_B_RPL_Lite.md`](docs/05_Piano_B_RPL_Lite.md) | RPL Lite — il modello entry-level |
 | [`consulting-os/README.md`](consulting-os/README.md) | Modulo di supporto e trasformazione operativa |
+| [`consulting-os/playbooks/pre-rpl-to-lite-playbook.md`](consulting-os/playbooks/pre-rpl-to-lite-playbook.md) | Playbook Pre-RPL → Lite: guida pratica 90 giorni |
 | [`REPOSITORY_MAP.md`](REPOSITORY_MAP.md) | Mappa completa del repository |
 
 ## Moduli Core
