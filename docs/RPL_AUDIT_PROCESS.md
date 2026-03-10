@@ -518,6 +518,7 @@ Il modulo consulting è il **supporto operativo** che accompagna il ristorante d
 - `docs/RESTAURANT_LIFECYCLE.md` — Stadi RPL e transizioni abilitate dall'audit
 - `docs/Regolamento_Generale/06_Sistema_di_Auditing.md` — Governance e enti di controllo del sistema di auditing
 - `consulting-os/templates/audit-report/template.md` — Template report diagnostico consulente
+- `docs/RPL_STAGE_TRANSITIONS.md` — Defines which transition decisions are triggered by each audit outcome (warning, downgrade, upgrade, suspension)
 - `consulting-os/prompts/audit-analysis.md` — Prompt AI per analisi post-audit
 - `consulting-os/clients/_CLIENT-TEMPLATE/01-audit/` — Struttura audit diagnostico per cliente
 

@@ -138,3 +138,4 @@ RPL Excellence (mentorship, visibilità nazionale)
 - `docs/05_Piano_B_RPL_Lite.md` — Specifica tecnica del modello RPL Lite
 - `consulting-os/README.md` — Modulo di trasformazione operativa
 - `docs/Regolamento_Generale/` — Regole dettagliate per ogni area
+- `docs/RPL_STAGE_TRANSITIONS.md` — Enforcement layer of the meritocratic progression system: entry, upgrade, warning, downgrade, and suspension rules
