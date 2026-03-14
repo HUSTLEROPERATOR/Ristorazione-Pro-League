@@ -29,10 +29,17 @@ Leggi questi prima per capire il sistema RPL nel suo insieme:
 
 ## Approfondimenti e dati
 
-- [`02_Analisi_Settore_Approfondimenti.md`](02_Analisi_Settore_Approfondimenti.md) — Analisi di settore, statistiche e studi di contesto
-- [`DATI_STATISTICI_RISTORAZIONE_2025.md`](DATI_STATISTICI_RISTORAZIONE_2025.md) — Dati statistici ristorazione 2025
+- [`02_Analisi_Settore_Approfondimenti.md`](02_Analisi_Settore_Approfondimenti.md) — Analisi di settore: struttura, dinamiche economiche, mercato del lavoro, normativa, tendenze
+- [`DATI_STATISTICI_RISTORAZIONE_2025.md`](DATI_STATISTICI_RISTORAZIONE_2025.md) — Dati statistici ristorazione 2025 (FIPE, ISTAT, Unioncamere)
+- [`CAMBIAMENTO_RISTORAZIONE_2025.md`](CAMBIAMENTO_RISTORAZIONE_2025.md) — **[NUOVO]** Trasformazione del settore: consumatori, lavoro, modelli di business, sostenibilità, scenari al 2030
 - [`06_Sviluppi_Futuri_e_Moduli_Avanzati.md`](06_Sviluppi_Futuri_e_Moduli_Avanzati.md) — Idee per moduli avanzati e sviluppi futuri
 - [`03_Architettura_Tecnica.md`](03_Architettura_Tecnica.md) — Architettura tecnica proposta
+
+## Normativa, Lavoro e Sicurezza
+
+- [`NORMATIVA_LAVORO_RISTORAZIONE.md`](NORMATIVA_LAVORO_RISTORAZIONE.md) — **[NUOVO]** Guida pratica: CCNL, adempimenti datore, sicurezza (D.Lgs. 81/2008), privacy, disciplina
+- [`CCNL_TURISMO_GUIDA_PRATICA.md`](CCNL_TURISMO_GUIDA_PRATICA.md) — **[NUOVO]** CCNL Turismo e Pubblici Esercizi: livelli, retribuzioni, orari, tipologie contrattuali, welfare
+- [`HACCP_E_SICUREZZA_ALIMENTARE.md`](HACCP_E_SICUREZZA_ALIMENTARE.md) — **[NUOVO]** HACCP e igiene alimentare: 7 principi, CCP, rintracciabilità, allergeni, procedure pratiche
 
 ## Modulo di supporto consulenziale
 
